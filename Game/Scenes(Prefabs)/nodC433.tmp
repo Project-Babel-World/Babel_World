@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm5dnytvycetm"]
+[gd_scene load_steps=25 format=3 uid="uid://dm5dnytvycetm"]
 
 [ext_resource type="Texture2D" uid="uid://bvvhm3rualgye" path="res://FrogDudes/Background/Green.png" id="1_jtpgy"]
 [ext_resource type="Texture2D" uid="uid://s120rmf040ac" path="res://FrogDudes/Terrain/Terrain (16x16).png" id="2_xsi0j"]
 [ext_resource type="PackedScene" uid="uid://cexkco4k3o2ig" path="res://Scenes(Prefabs)/Player.tscn" id="3_rb61y"]
-[ext_resource type="PackedScene" uid="uid://drnv8ghcownsk" path="res://Scenes(Prefabs)/villager_example.tscn" id="4_cg3os"]
+[ext_resource type="Script" path="res://Scenes(Prefabs)/villager.gd" id="4_gwswg"]
+[ext_resource type="Texture2D" uid="uid://63p6jhebkfyd" path="res://FrogDudes/Main Characters/Ninja Frog/Run (32x32).png" id="4_oxknx"]
+[ext_resource type="Script" path="res://finite_state_machine.gd" id="6_b4c0n"]
+[ext_resource type="Script" path="res://villager_wander_state.gd" id="7_co4e7"]
+[ext_resource type="Script" path="res://villager_idle_state.gd" id="7_yhi1x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwou7"]
 texture = ExtResource("2_xsi0j")
@@ -481,6 +485,100 @@ texture = ExtResource("2_xsi0j")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kwou7")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl1nu"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvbik"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dnxj"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_semsj"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vfa4"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuj3o"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkwsf"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oq5k"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lf5f"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgm6y"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s21b6"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77ser"]
+atlas = ExtResource("4_oxknx")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1tr5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl1nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvbik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dnxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_semsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vfa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuj3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkwsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oq5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lf5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgm6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s21b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77ser")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4y7q"]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(79, 12)
 
@@ -503,4 +601,32 @@ layer_0/tile_data = PackedInt32Array(655361, 458752, 0, 655362, 458752, 0, 65536
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_rb61y")]
 position = Vector2(513, 443)
 
-[node name="Villager_Example" parent="." instance=ExtResource("4_cg3os")]
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(368, 455)
+scale = Vector2(2, 2)
+disable_mode = 2
+script = ExtResource("4_gwswg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_q1tr5")
+animation = &"move"
+autoplay = "move"
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_g4y7q")
+
+[node name="FiniteStateMachine" type="Node" parent="CharacterBody2D2"]
+script = ExtResource("6_b4c0n")
+
+[node name="VillageIdleState" type="Node" parent="CharacterBody2D2/FiniteStateMachine"]
+script = ExtResource("7_yhi1x")
+
+[node name="VillagerWanderState" type="Node" parent="CharacterBody2D2/FiniteStateMachine" node_paths=PackedStringArray("actor", "animator")]
+script = ExtResource("7_co4e7")
+actor = NodePath("../..")
+animator = NodePath("../../AnimatedSprite2D")
+
+[node name="Timer" type="Timer" parent="CharacterBody2D2"]
