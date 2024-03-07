@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="NewStartScreen"
-run/main_scene="res://Scripts/start_screen.tscn"
+config/name="Town1_CorazonDelMar"
+run/main_scene="res://Town_CorazonDeMar.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
