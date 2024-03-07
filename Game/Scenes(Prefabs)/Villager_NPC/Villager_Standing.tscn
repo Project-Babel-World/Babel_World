@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://d3g6g0vwrbru3"]
+
+[ext_resource type="Script" path="res://Scripts/villager_stand.gd" id="1_uj4oo"]
+[ext_resource type="Texture2D" uid="uid://doa7adj6bmb43" path="res://FrogDudes/Traps/Rock Head/Idle.png" id="2_jcsoc"]
+[ext_resource type="Texture2D" uid="uid://dbiclbw2ndey" path="res://FrogDudes/Traps/Rock Head/Blink (42x42).png" id="3_3pqpb"]
+[ext_resource type="Script" path="res://Scripts/States/finite_state_machine.gd" id="4_3k20m"]
+[ext_resource type="Script" path="res://Scripts/States/villager_idle_state.gd" id="6_ptb51"]
+[ext_resource type="Script" path="res://Scripts/States/villager_action_state.gd" id="7_joee7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l4eu"]
+atlas = ExtResource("2_jcsoc")
+region = Rect2(5, 5, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_128c7"]
+atlas = ExtResource("3_3pqpb")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh1qx"]
+atlas = ExtResource("3_3pqpb")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe7vx"]
+atlas = ExtResource("3_3pqpb")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpypg"]
+atlas = ExtResource("3_3pqpb")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1tr5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l4eu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_128c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh1qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oe7vx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpypg")
+}],
+"loop": true,
+"name": &"idle_action",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4y7q"]
+
+[node name="villager_stand" type="CharacterBody2D"]
+position = Vector2(368, 455)
+scale = Vector2(2, 2)
+disable_mode = 2
+collision_mask = 7
+script = ExtResource("1_uj4oo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, 1)
+sprite_frames = SubResource("SpriteFrames_q1tr5")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.391714
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_g4y7q")
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
+script = ExtResource("4_3k20m")
+state = NodePath("VillagerIdleState")
+
+[node name="VillagerIdleState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator")]
+script = ExtResource("6_ptb51")
+actor = NodePath("../..")
+animator = NodePath("../../AnimatedSprite2D")
+
+[node name="VillagerActionState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator")]
+script = ExtResource("7_joee7")
+actor = NodePath("../..")
+animator = NodePath("../../AnimatedSprite2D")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
