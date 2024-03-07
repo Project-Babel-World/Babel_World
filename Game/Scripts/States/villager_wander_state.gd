@@ -5,6 +5,8 @@ extends State
 @export var actor: Villager
 @export var animator: AnimatedSprite2D
 
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 var direction = Vector2.LEFT
 
 func _ready():
@@ -23,7 +25,9 @@ func _physics_process(delta):
 	animator.scale.x = sign(actor.velocity.x)
 	if animator.scale.x ==0: animator.scale.x = 1
 	var collision = actor.move_and_collide(actor.velocity * delta)
+		
 	if collision:
 		var bounce_velocity = actor.velocity.bounce(collision.get_normal())
 		actor.velocity = bounce_velocity
+	
 		
