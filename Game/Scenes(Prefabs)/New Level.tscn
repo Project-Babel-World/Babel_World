@@ -1,20 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://dm5dnytvycetm"]
+[gd_scene load_steps=17 format=3 uid="uid://bq0mka44ve8ay"]
 
-[ext_resource type="Texture2D" uid="uid://s120rmf040ac" path="res://FrogDudes/Terrain/Terrain (16x16).png" id="2_xsi0j"]
-[ext_resource type="Texture2D" uid="uid://dct1kw03jdqp1" path="res://Fantasy Swamp Forest/Free/Terrain_and_Props.png" id="3_5yuin"]
-[ext_resource type="PackedScene" uid="uid://cexkco4k3o2ig" path="res://Scenes(Prefabs)/Player.tscn" id="3_rb61y"]
-[ext_resource type="PackedScene" uid="uid://drnv8ghcownsk" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Walking.tscn" id="4_cg3os"]
-[ext_resource type="Texture2D" uid="uid://dj43hb7hlcr0y" path="res://Fantasy Swamp Forest/stringstar fields/tileset.png" id="4_ckfck"]
-[ext_resource type="PackedScene" uid="uid://d3g6g0vwrbru3" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Standing.tscn" id="5_4vgj3"]
-[ext_resource type="PackedScene" uid="uid://d1vrbfplbmf57" path="res://Scenes(Prefabs)/Villager_NPC/Blinking_Red_Block.tscn" id="7_5e1sk"]
-[ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Fantasy Swamp Forest/stringstar fields/background_0.png" id="8_43m0g"]
-[ext_resource type="PackedScene" uid="uid://6yph0ss0u11p" path="res://Scenes(Prefabs)/Villager_NPC/detecting_pete.tscn" id="8_adigr"]
-[ext_resource type="PackedScene" uid="uid://1g7vx6itquc2" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Walking_Tiki.tscn" id="8_qu4nt"]
-[ext_resource type="Texture2D" uid="uid://nxqfnefb5tpt" path="res://Fantasy Swamp Forest/stringstar fields/background_1.png" id="9_eqpyi"]
-[ext_resource type="Texture2D" uid="uid://cajsgyykl231w" path="res://Fantasy Swamp Forest/stringstar fields/background_2.png" id="12_a1aci"]
+[ext_resource type="PackedScene" uid="uid://6yph0ss0u11p" path="res://Scenes(Prefabs)/Villager_NPC/detecting_pete.tscn" id="1_lfrwa"]
+[ext_resource type="Texture2D" uid="uid://s120rmf040ac" path="res://FrogDudes/Terrain/Terrain (16x16).png" id="2_d4s8s"]
+[ext_resource type="Texture2D" uid="uid://dct1kw03jdqp1" path="res://Fantasy Swamp Forest/Free/Terrain_and_Props.png" id="3_03kr2"]
+[ext_resource type="Texture2D" uid="uid://dj43hb7hlcr0y" path="res://Fantasy Swamp Forest/stringstar fields/tileset.png" id="4_5sug3"]
+[ext_resource type="PackedScene" uid="uid://cexkco4k3o2ig" path="res://Scenes(Prefabs)/Player.tscn" id="5_ialsb"]
+[ext_resource type="PackedScene" uid="uid://drnv8ghcownsk" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Walking.tscn" id="6_urnnp"]
+[ext_resource type="PackedScene" uid="uid://d3g6g0vwrbru3" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Standing.tscn" id="7_x1y7y"]
+[ext_resource type="PackedScene" uid="uid://d1vrbfplbmf57" path="res://Scenes(Prefabs)/Villager_NPC/Blinking_Red_Block.tscn" id="8_egxqa"]
+[ext_resource type="PackedScene" uid="uid://1g7vx6itquc2" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Walking_Tiki.tscn" id="9_rg30t"]
+[ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Fantasy Swamp Forest/stringstar fields/background_0.png" id="10_f0kyk"]
+[ext_resource type="Texture2D" uid="uid://nxqfnefb5tpt" path="res://Fantasy Swamp Forest/stringstar fields/background_1.png" id="11_6ueyk"]
+[ext_resource type="Texture2D" uid="uid://cajsgyykl231w" path="res://Fantasy Swamp Forest/stringstar fields/background_2.png" id="12_vipsv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwou7"]
-texture = ExtResource("2_xsi0j")
+texture = ExtResource("2_d4s8s")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -489,7 +489,7 @@ texture = ExtResource("2_xsi0j")
 20:10/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fl3ut"]
-texture = ExtResource("3_5yuin")
+texture = ExtResource("3_03kr2")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1614,7 +1614,7 @@ texture = ExtResource("3_5yuin")
 9:33/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6hyhh"]
-texture = ExtResource("4_ckfck")
+texture = ExtResource("4_5sug3")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2074,7 +2074,7 @@ sources/3 = SubResource("TileSetAtlasSource_6hyhh")
 position = Vector2(79, 12)
 metadata/_edit_horizontal_guides_ = [270.0]
 
-[node name="DetectingPete" parent="." instance=ExtResource("8_adigr")]
+[node name="DetectingPete" parent="." instance=ExtResource("1_lfrwa")]
 visible = false
 position = Vector2(128, 354)
 
@@ -2085,7 +2085,7 @@ tile_set = SubResource("TileSet_7v3yt")
 format = 2
 layer_0/tile_data = PackedInt32Array(655361, 458752, 0, 655365, 458752, 0, 655366, 458752, 0, 655367, 458752, 0, 655368, 458752, 0, 655369, 458752, 0, 655370, 458752, 0, 655371, 458752, 0, 655372, 655360, 1, 655373, 458752, 1, 655374, 458752, 1, 655375, 458752, 1, 655376, 458752, 1, 655377, 458752, 1, 786432, 458752, 1, 720896, 458752, 1, 720897, 458752, 1, 720898, 458752, 1, 720899, 458752, 1, 720900, 458752, 1, 720901, 458752, 1, 720902, 458752, 1, 786437, 458752, 1, 786438, 458752, 1, 720903, 458752, 1, 720904, 458752, 1, 720905, 458752, 1, 720906, 458752, 1, 720907, 458752, 1, 720908, 458752, 1, 720909, 458752, 1, 720910, 458752, 1, 720911, 458752, 1, 720912, 458752, 1, 720913, 458752, 1, 786448, 458752, 1, 786447, 458752, 1, 786446, 458752, 1, 786445, 458752, 1, 786444, 458752, 1, 786443, 458752, 1, 786442, 458752, 1, 786441, 458752, 1, 786440, 458752, 1, 786439, 458752, 1, 786436, 458752, 1, 786435, 458752, 1, 786434, 458752, 1, 786433, 458752, 1, 655360, 458752, 0, 720895, 458752, 0, 720894, 458752, 0, 786431, 458752, 1, 786430, 393216, 1, 851967, 458752, 1, 851966, 393216, 1, 917502, 393216, 2, 917503, 458752, 2, 851968, 458752, 2, 851969, 458752, 2, 851970, 458752, 2, 851971, 458752, 2, 851972, 458752, 2, 851973, 458752, 2, 851974, 458752, 2, 851975, 458752, 2, 851976, 458752, 2, 851977, 458752, 2, 851978, 458752, 2, 851979, 458752, 2, 851980, 458752, 2, 851981, 458752, 2, 851982, 458752, 2, 851983, 458752, 2, 851984, 458752, 2, 851985, 458752, 2, 786449, 458752, 1, 131068, 0, 5, 196604, 0, 5, 262140, 0, 5, 327676, 0, 5, 393212, 0, 5, 458748, 0, 5, 524284, 0, 5, 589820, 0, 5, 655356, 0, 5, 720892, 0, 5, 786428, 0, 5, 851964, 0, 5, 131069, 0, 5, 196605, 0, 5, 262141, 0, 5, 327677, 0, 5, 393213, 0, 5, 458749, 0, 5, 524285, 0, 5, 589821, 0, 5, 655357, 0, 5, 720893, 0, 5, 786429, 0, 5, 851965, 0, 5, 589836, 393216, 0, 589837, 458752, 0, 589838, 524288, 0, 524303, 393216, 1, 589839, 393216, 1, 524304, 458752, 1, 589840, 458752, 1, 524305, 524288, 1, 589841, 524288, 1, 655362, 655360, 1, 655363, 458752, 1, 655364, 589824, 1, 589828, 524288, 1, 524292, 524288, 0, 524291, 458752, 0, 524290, 393216, 0, 589826, 393216, 1, 589827, 458752, 1, 458767, 393216, 1, 458768, 458752, 1, 458769, 524288, 1, 393231, 393216, 0, 393232, 458752, 0, 393233, 524288, 0, 720938, 393216, 0, 786474, 393216, 1, 852010, 393216, 2, 720939, 458752, 0, 786475, 458752, 1, 852011, 458752, 2, 720940, 458752, 0, 786476, 458752, 1, 852012, 458752, 2, 720941, 458752, 0, 786477, 458752, 1, 852013, 458752, 2, 720942, 458752, 0, 786478, 458752, 1, 852014, 458752, 2, 720943, 458752, 0, 786479, 458752, 1, 852015, 458752, 2, 655416, 655363, 8, 262201, 720899, 2, 327737, 720899, 3, 393273, 720899, 4, 655417, 720899, 8, 196666, 786435, 1, 262202, 786435, 2, 327738, 786435, 3, 393274, 786435, 4, 458810, 786435, 5, 524346, 786435, 6, 655418, 786435, 8, 131131, 851971, 0, 196667, 851971, 1, 262203, 851971, 2, 327739, 851971, 3, 393275, 851971, 4, 458811, 851971, 5, 524347, 851971, 6, 589883, 851971, 7, 655419, 851971, 8, 131132, 917507, 0, 196668, 917507, 1, 262204, 917507, 2, 327740, 917507, 3, 393276, 917507, 4, 458812, 917507, 5, 524348, 917507, 6, 589884, 917507, 7, 655420, 917507, 8, 131133, 983043, 0, 196669, 983043, 1, 262205, 983043, 2, 327741, 983043, 3, 393277, 983043, 4, 458813, 983043, 5, 524349, 983043, 6, 589885, 983043, 7, 655421, 983043, 8, 196670, 1048579, 1, 262206, 1048579, 2, 327742, 1048579, 3, 393278, 1048579, 4, 458814, 1048579, 5, 524350, 1048579, 6, 655422, 1048579, 8, 262207, 1114115, 2, 327743, 1114115, 3, 655402, 3, 4, 655403, 65539, 4, 589832, 3, 4, 589833, 65539, 4, 458750, 3, 5, 524286, 3, 6, 589822, 3, 7, 655358, 3, 8, 458751, 65539, 5, 524287, 65539, 6, 589823, 65539, 7, 655359, 65539, 8, 393216, 131075, 5, 458752, 131075, 6, 524288, 131075, 7, 589824, 131075, 8, 393217, 196611, 5, 458753, 196611, 6, 524289, 196611, 7, 589825, 196611, 8, 655407, 589827, 8, 655423, 262147, 6, 655424, 65539, 4, 720952, 3, 9, 786488, 3, 10, 720953, 65539, 9, 786489, 65539, 10, 720954, 131075, 9, 786490, 131075, 10, 720955, 196611, 9, 786491, 3, 10, 720956, 262147, 9, 786492, 65539, 10, 720957, 327683, 9, 786493, 3, 10, 720958, 393219, 9, 786494, 65539, 10, 720959, 458755, 9, 786495, 131075, 10, 720960, 524291, 9, 786496, 3, 10, 720961, 524291, 1342177285, 852024, 3, 9, 852025, 3, 9, 852026, 3, 9, 852027, 3, 9, 852028, 3, 9, 852029, 3, 9, 852030, 3, 9, 852031, 3, 9, 852032, 3, 9, 786497, 524291, 1342177285, 852033, 524291, 1342177285, 720951, 524291, 1610612741, 786487, 524291, 1610612741, 852023, 524291, 1610612741, 655404, 458755, 6, 655405, 524291, 6, 655406, 589827, 6, 589874, 458755, 6, 655410, 589827, 805306374, 655411, 524291, 805306374, 524339, 589827, 8, 589876, 589827, 6, 655412, 458755, 805306374, 458790, 458755, 4, 458789, 327683, 4, 458791, 589827, 4, 720947, 65539, 2, 524302, 262147, 4, 458765, 196611, 3, 524301, 196611, 4, 458766, 262147, 3, 262165, 327683, 4, 262166, 393219, 4, 262167, 458755, 4, 262168, 524291, 4, 262169, 589827, 4, 196637, 327683, 4, 196638, 393219, 4, 196639, 458755, 4, 196640, 524291, 4, 196641, 589827, 4, 589875, 524291, 6)
 
-[node name="Player" parent="." instance=ExtResource("3_rb61y")]
+[node name="Player" parent="." instance=ExtResource("5_ialsb")]
 position = Vector2(-69, 443)
 scale = Vector2(2.5, 2.5)
 platform_floor_layers = 4294967293
@@ -2096,19 +2096,19 @@ limit_left = -10
 limit_top = -500
 limit_bottom = 700
 
-[node name="Villager_Walking" parent="." instance=ExtResource("4_cg3os")]
+[node name="Villager_Walking" parent="." instance=ExtResource("6_urnnp")]
 visible = false
 position = Vector2(359, 446)
 
-[node name="Blinking_Block" parent="." instance=ExtResource("5_4vgj3")]
+[node name="Blinking_Block" parent="." instance=ExtResource("7_x1y7y")]
 visible = false
 position = Vector2(1096, 747)
 
-[node name="villager_stand" parent="." instance=ExtResource("7_5e1sk")]
+[node name="villager_stand" parent="." instance=ExtResource("8_egxqa")]
 visible = false
 position = Vector2(794, 241)
 
-[node name="Villager_Example2" parent="." instance=ExtResource("8_qu4nt")]
+[node name="Villager_Example2" parent="." instance=ExtResource("9_rg30t")]
 visible = false
 z_index = 1
 position = Vector2(506, 446)
@@ -2117,64 +2117,64 @@ position = Vector2(506, 446)
 z_index = -1
 position = Vector2(739, 109)
 scale = Vector2(5.91493, 6.51111)
-texture = ExtResource("8_43m0g")
+texture = ExtResource("10_f0kyk")
 
 [node name="Background0" type="Sprite2D" parent="Background0"]
 z_index = -1
 position = Vector2(273.883, 6.75768)
 scale = Vector2(0.949754, 1.00514)
-texture = ExtResource("8_43m0g")
+texture = ExtResource("10_f0kyk")
 
 [node name="Background6" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(739, 153)
 scale = Vector2(5.91493, 6.51111)
-texture = ExtResource("8_43m0g")
+texture = ExtResource("10_f0kyk")
 
 [node name="Background0" type="Sprite2D" parent="Background6"]
 z_index = -1
 position = Vector2(543.202, 6.75768)
 scale = Vector2(0.949754, 1.00514)
-texture = ExtResource("8_43m0g")
+texture = ExtResource("10_f0kyk")
 
 [node name="Background1" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(2660.75, 323)
 scale = Vector2(4.0434, 4.55556)
-texture = ExtResource("9_eqpyi")
+texture = ExtResource("11_6ueyk")
 
 [node name="Background8" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(3824, 337)
 scale = Vector2(4.0434, 4.55556)
-texture = ExtResource("9_eqpyi")
+texture = ExtResource("11_6ueyk")
 
 [node name="Background2" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(1558, 317)
 scale = Vector2(3.65278, 4.32778)
-texture = ExtResource("9_eqpyi")
+texture = ExtResource("11_6ueyk")
 
 [node name="Background4" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(461, 314)
 scale = Vector2(4.01389, 4.37778)
-texture = ExtResource("9_eqpyi")
+texture = ExtResource("11_6ueyk")
 
 [node name="Background3" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(2202.75, 382)
 scale = Vector2(3.77257, 4.02222)
-texture = ExtResource("12_a1aci")
+texture = ExtResource("12_vipsv")
 
 [node name="Background7" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(3291, 399)
 scale = Vector2(3.77257, 4.02222)
-texture = ExtResource("12_a1aci")
+texture = ExtResource("12_vipsv")
 
 [node name="Background5" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(1140, 378)
 scale = Vector2(3.63542, 4.02222)
-texture = ExtResource("12_a1aci")
+texture = ExtResource("12_vipsv")
