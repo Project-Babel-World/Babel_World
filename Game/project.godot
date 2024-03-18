@@ -15,10 +15,16 @@ run/main_scene="res://Scenes(Prefabs)/node_2d.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+<<<<<<< Updated upstream
 [display]
 
 window/size/viewport_width=2000
 window/size/viewport_height=1500
+=======
+[dotnet]
+
+project/assembly_name="Babel World"
+>>>>>>> Stashed changes
 
 [importer_defaults]
 
