@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://xqwwn6ogxklf"
+=======
+uid="uid://d3o0e1jjpky7r"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/HillLeft.png-8335c6a1da1f4cba0acb73c876c1b657.ctex"
 metadata={
 "vram_texture": false

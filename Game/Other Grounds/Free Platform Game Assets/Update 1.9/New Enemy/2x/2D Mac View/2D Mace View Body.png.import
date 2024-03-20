@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cpvu4ren8f7oq"
+=======
+uid="uid://w3epvfv1eym7"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/2D Mace View Body.png-f83466c61d6ebce76f43f344010ebf2e.ctex"
 metadata={
 "vram_texture": false

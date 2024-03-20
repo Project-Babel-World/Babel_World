@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://de0nw47i0fns3"
+=======
+uid="uid://bg0vtah2l5762"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/Autumn Bush.png-8e31e4e6a7cb7839ed972cf536e4d354.ctex"
 metadata={
 "vram_texture": false
