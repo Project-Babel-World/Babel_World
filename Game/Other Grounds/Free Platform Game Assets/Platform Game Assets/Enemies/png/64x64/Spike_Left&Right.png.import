@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://dnk3uqrfd0i35"
+=======
 uid="uid://5ox2fmruu3ij"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/Spike_Left&Right.png-43af63fc826f182e8cf644da25a9ad03.ctex"
 metadata={
 "vram_texture": false

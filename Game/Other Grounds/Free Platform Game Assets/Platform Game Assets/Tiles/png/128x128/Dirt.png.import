@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://b4uyi42ed5ang"
+=======
 uid="uid://ds5bpcf270kmy"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/Dirt.png-a601b3868c11a82817003ee967b2feb1.ctex"
 metadata={
 "vram_texture": false
@@ -30,5 +34,9 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
+<<<<<<< HEAD
+process/size_limit=0
+=======
 process/size_limit=32
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 detect_3d/compress_to=0

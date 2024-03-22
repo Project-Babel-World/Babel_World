@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://k64snvpo3tbb"
+=======
 uid="uid://bbtbnbidak4co"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/Eyelid 512.png-39ad5f9140c06e8977366895fde2b21b.ctex"
 metadata={
 "vram_texture": false

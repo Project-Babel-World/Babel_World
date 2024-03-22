@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://bkreooh55pvh3"
+=======
 uid="uid://qgc56s4nups2"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/Spike_Up.png-40dfad8b601790f843d006b92caabace.ctex"
 metadata={
 "vram_texture": false
