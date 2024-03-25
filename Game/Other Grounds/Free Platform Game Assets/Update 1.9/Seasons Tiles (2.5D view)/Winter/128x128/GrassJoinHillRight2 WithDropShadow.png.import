@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://1cvu0j8lstox"
+=======
 uid="uid://7iin63k14qq8"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/GrassJoinHillRight2 WithDropShadow.png-8cea51abe40b65ba9a62578c3527f11d.ctex"
 metadata={
 "vram_texture": false

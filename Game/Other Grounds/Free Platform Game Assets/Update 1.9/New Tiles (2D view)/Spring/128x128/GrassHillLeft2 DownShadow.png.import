@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://cv8f06ua7om6y"
+=======
 uid="uid://cqdqckk5d02ur"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/GrassHillLeft2 DownShadow.png-d2d911f62b8ee5041d1a8dd3b5019ca4.ctex"
 metadata={
 "vram_texture": false

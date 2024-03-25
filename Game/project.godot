@@ -10,11 +10,23 @@ config_version=5
 
 [application]
 
-config/name="Babel World"
+config/name="Pre Spring Break Prototype"
 run/main_scene="res://Scenes(Prefabs)/node_2d.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+[display]
+
+window/size/viewport_width=2000
+window/size/viewport_height=1500
+=======
+[dotnet]
+
+project/assembly_name="Babel World"
+>>>>>>> Stashed changes
+=======
 [display]
 
 window/size/viewport_width=2500
@@ -23,6 +35,7 @@ window/size/viewport_height=1300
 [dotnet]
 
 project/assembly_name="Babel World"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 
 [importer_defaults]
 

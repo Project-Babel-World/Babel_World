@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://c21hkkx2g54vy"
+=======
 uid="uid://cfcj52oltodj4"
+>>>>>>> 4e8bfe0fdf76858c9c60743caa7b5b3ce03e9152
 path="res://.godot/imported/HillRight2 WithDropShadow.png-611f61eeab6c204725bdff69a89ff0da.ctex"
 metadata={
 "vram_texture": false
