@@ -2113,68 +2113,45 @@ visible = false
 z_index = 1
 position = Vector2(506, 446)
 
-[node name="Background0" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(739, 109)
-scale = Vector2(5.91493, 6.51111)
-texture = ExtResource("10_f0kyk")
-
-[node name="Background0" type="Sprite2D" parent="Background0"]
-z_index = -1
-position = Vector2(273.883, 6.75768)
-scale = Vector2(0.949754, 1.00514)
-texture = ExtResource("10_f0kyk")
-
-[node name="Background6" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(739, 153)
-scale = Vector2(5.91493, 6.51111)
-texture = ExtResource("10_f0kyk")
-
-[node name="Background0" type="Sprite2D" parent="Background6"]
-z_index = -1
-position = Vector2(543.202, 6.75768)
-scale = Vector2(0.949754, 1.00514)
-texture = ExtResource("10_f0kyk")
-
-[node name="Background1" type="Sprite2D" parent="."]
+[node name="Sky" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(2660.75, 323)
-scale = Vector2(4.0434, 4.55556)
+position = Vector2(1152.25, 108.375)
+scale = Vector2(8.72743, 7.29306)
+texture = ExtResource("10_f0kyk")
+
+[node name="darkPurple" type="Sprite2D" parent="Sky"]
+z_index = 1
+position = Vector2(0, 1)
+texture = ExtResource("12_vipsv")
+
+[node name="darkBlue" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -8)
 texture = ExtResource("11_6ueyk")
 
-[node name="Background8" type="Sprite2D" parent="."]
+[node name="Sky2" type="Sprite2D" parent="Sky"]
 z_index = -2
-position = Vector2(3824, 337)
-scale = Vector2(4.0434, 4.55556)
-texture = ExtResource("11_6ueyk")
+position = Vector2(286.654, 0)
+texture = ExtResource("10_f0kyk")
 
-[node name="Background2" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(1558, 317)
-scale = Vector2(3.65278, 4.32778)
-texture = ExtResource("11_6ueyk")
-
-[node name="Background4" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(461, 314)
-scale = Vector2(4.01389, 4.37778)
-texture = ExtResource("11_6ueyk")
-
-[node name="Background3" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(2202.75, 382)
-scale = Vector2(3.77257, 4.02222)
+[node name="darkPurple" type="Sprite2D" parent="Sky/Sky2"]
+z_index = 1
+position = Vector2(0, 1)
 texture = ExtResource("12_vipsv")
 
-[node name="Background7" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(3291, 399)
-scale = Vector2(3.77257, 4.02222)
+[node name="darkBlue" type="Sprite2D" parent="Sky/Sky2"]
+position = Vector2(0, -8)
+texture = ExtResource("11_6ueyk")
+
+[node name="Sky3" type="Sprite2D" parent="Sky"]
+z_index = -2
+position = Vector2(574.711, 0)
+texture = ExtResource("10_f0kyk")
+
+[node name="darkPurple" type="Sprite2D" parent="Sky/Sky3"]
+z_index = 1
+position = Vector2(0, 1)
 texture = ExtResource("12_vipsv")
 
-[node name="Background5" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(1140, 378)
-scale = Vector2(3.63542, 4.02222)
-texture = ExtResource("12_vipsv")
+[node name="darkBlue" type="Sprite2D" parent="Sky/Sky3"]
+position = Vector2(0, -8)
+texture = ExtResource("11_6ueyk")
