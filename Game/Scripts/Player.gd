@@ -44,4 +44,7 @@ func _physics_process(delta): # runs at 6fps ?
 	# Handle fall
 	if (position.y > 3000):
 		respawn(0, 500)
+		
+	## Swim
+	if 
 
