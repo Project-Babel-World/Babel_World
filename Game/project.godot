@@ -15,6 +15,15 @@ run/main_scene="res://Scenes(Prefabs)/New Level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Dialgoue_State="*res://Scripts/dialgoue_state.gd"
+
+[dialogue_manager]
+
+general/states=["Dialgoue_State"]
+
 [display]
 
 window/size/viewport_width=2500
@@ -23,6 +32,10 @@ window/size/viewport_height=1300
 [dotnet]
 
 project/assembly_name="Babel World"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [importer_defaults]
 
@@ -66,6 +79,10 @@ left={
 ]
 }
 
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialog/main.dialogue")
+
 [layer_names]
 
 2d_render/layer_1="General"
@@ -74,6 +91,7 @@ left={
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Villager"
+2d_physics/layer_10="Actionables"
 
 [physics]
 

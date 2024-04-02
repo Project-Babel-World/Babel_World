@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cx1dnv4vof47g"]
+[gd_scene load_steps=34 format=3 uid="uid://cx1dnv4vof47g"]
 
 [ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Village/stringstar fields/background_0.png" id="1_k60k6"]
 [ext_resource type="Texture2D" uid="uid://bmw0gvxrawkt7" path="res://Village/Heros/2 Owlet_Monster/Owlet_Monster.png" id="2_0d1re"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cexkco4k3o2ig" path="res://Scenes(Prefabs)/Player.tscn" id="13_1dij0"]
 [ext_resource type="PackedScene" uid="uid://drnv8ghcownsk" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Walking.tscn" id="14_ue7au"]
 [ext_resource type="PackedScene" uid="uid://1g7vx6itquc2" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Walking_Tiki.tscn" id="15_iooso"]
+[ext_resource type="PackedScene" uid="uid://ttmi62wrcd57" path="res://actionable.tscn" id="15_xi0mf"]
+[ext_resource type="Resource" uid="uid://cq3tdsdsoac1h" path="res://dialog/main.dialogue" id="16_6ojij"]
 [ext_resource type="PackedScene" uid="uid://d3g6g0vwrbru3" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Standing.tscn" id="16_8ocoe"]
 [ext_resource type="PackedScene" uid="uid://6yph0ss0u11p" path="res://Scenes(Prefabs)/Villager_NPC/detecting_pete.tscn" id="17_8iifo"]
 [ext_resource type="PackedScene" uid="uid://d1vrbfplbmf57" path="res://Scenes(Prefabs)/Villager_NPC/Blinking_Red_Block.tscn" id="18_kpjs2"]
@@ -6664,6 +6666,8 @@ sources/6 = SubResource("TileSetAtlasSource_ido2s")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcydt"]
 size = Vector2(148, 544)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8851c"]
+
 [node name="Town" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -6740,8 +6744,22 @@ shape = SubResource("RectangleShape2D_mcydt")
 position = Vector2(1338, 271)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(4, -1)
+position = Vector2(-787, 294)
 shape = SubResource("RectangleShape2D_mcydt")
+
+[node name="DetectingPete" parent="." instance=ExtResource("17_8iifo")]
+z_index = -1
+position = Vector2(1114, 438)
+rotation = -3.14159
+scale = Vector2(2, -2)
+
+[node name="Actionable" parent="DetectingPete" instance=ExtResource("15_xi0mf")]
+dialogue_resource = ExtResource("16_6ojij")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectingPete/Actionable"]
+position = Vector2(-2.5, -0.500006)
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_8851c")
 
 [node name="Villager_Holder" type="Node" parent="."]
 
@@ -6780,12 +6798,6 @@ position = Vector2(1301, 312)
 
 [node name="villager_stand2" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
 position = Vector2(1301, 437)
-
-[node name="DetectingPete" parent="Villager_Holder" instance=ExtResource("17_8iifo")]
-z_index = -1
-position = Vector2(1114, 438)
-rotation = -3.14159
-scale = Vector2(2, -2)
 
 [node name="villager_stand5" parent="Villager_Holder" instance=ExtResource("18_kpjs2")]
 position = Vector2(-198, 268)

@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -850.0
 @onready var sprite_2d = $Sprite2D
-
+@onready var actionable_finder = $Direction/ActionableFinder
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -11,7 +11,15 @@ func respawn(x, y):
 	position.x = x
 	position.y = y
 	
-func _physics_process(delta): # runs at 6fps ? 
+func _physics_process(delta): # runs at 6fps ?
+	
+	
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() >0:
+			DialogueManager.show_dialogue_balloon(load("res://dialog/main.dialogue"), "start") 
+			return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

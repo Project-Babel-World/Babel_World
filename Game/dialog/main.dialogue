@@ -1,0 +1,19 @@
+~ start
+
+Billy: Hello
+
+if has_met == "False":
+	Billy: I do not know your name 
+	Player: Oh yeah I never told you yet.
+	- Introduce yourself
+			set has_met ="True"
+			Player: My name is Cidi
+			Billy: Hi Cidi
+	- Leave conversation
+			Player: And I never will.
+			Billy: :(
+elif has_met =="True":
+	Billy: Welcome back Cidi
+else: 
+	Game: IDK how we got here
+=> END
