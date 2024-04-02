@@ -11,7 +11,15 @@ func respawn(x, y):
 	position.x = x
 	position.y = y
 	
-func _physics_process(delta): # runs at 6fps ? 
+func _physics_process(delta): # runs at 6fps ?
+	
+	
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() >0:
+			DialogueManager.show_dialogue_balloon(load("res://dialog/main.dialogue"), "start") 
+			return
 	# Add the gravity.
 		
 	if Input.is_action_just_pressed("ui_accept"):
