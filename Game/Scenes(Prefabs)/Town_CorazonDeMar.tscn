@@ -5031,11 +5031,11 @@ sources/4 = SubResource("TileSetAtlasSource_ki15t")
 sources/5 = SubResource("TileSetAtlasSource_ak3o8")
 sources/6 = SubResource("TileSetAtlasSource_ido2s")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcydt"]
-size = Vector2(148, 544)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_galnq"]
 size = Vector2(142, 203)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcydt"]
+size = Vector2(148, 544)
 
 [node name="Town" type="Node2D"]
 
@@ -5101,6 +5101,13 @@ position = Vector2(927, 208)
 position = Vector2(0, -61.5)
 offset = Vector2(0, -2)
 zoom = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("19_eweou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1272, 419.5)
+shape = SubResource("RectangleShape2D_galnq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(230, 524)
@@ -5168,15 +5175,6 @@ scale = Vector2(4, 4)
 
 [node name="Villager_Walking" parent="Villager_Holder" instance=ExtResource("14_ue7au")]
 position = Vector2(1214, 500)
-
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
-script = ExtResource("19_eweou")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(1272, 419.5)
-shape = SubResource("RectangleShape2D_galnq")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
