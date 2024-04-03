@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Babel World"
-run/main_scene="res://Scenes(Prefabs)/New Level.tscn"
+run/main_scene="res://Scenes(Prefabs)/Town_CorazonDeMar.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

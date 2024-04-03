@@ -1,11 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://cx1dnv4vof47g"]
+[gd_scene load_steps=33 format=3 uid="uid://cx1dnv4vof47g"]
 
 [ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Village/stringstar fields/background_0.png" id="1_k60k6"]
 [ext_resource type="Texture2D" uid="uid://bmw0gvxrawkt7" path="res://Village/Heros/2 Owlet_Monster/Owlet_Monster.png" id="2_0d1re"]
 [ext_resource type="Texture2D" uid="uid://dct1kw03jdqp1" path="res://Village/Fantasy Swamp Forest/Free/Terrain_and_Props.png" id="3_ccfod"]
 [ext_resource type="Texture2D" uid="uid://cxmwfd51n04e4" path="res://Village/Joyquest_demo_v1.5.3/PNG/spr_terrains.png" id="4_7rnmr"]
 [ext_resource type="Texture2D" uid="uid://creis36611737" path="res://Village/opp4_village_tiles/opp4_village_tiles/environment/tiles/village/tile_village_house.png" id="5_ojyn5"]
-[ext_resource type="Texture2D" uid="uid://cjkg86euo5gvh" path="res://Village/raou_free_top_down_adventure/topDown_baseTiles.png" id="6_iyrsh"]
+[ext_resource type="Texture2D" uid="uid://bghysneqequx0" path="res://Scripts/icon.svg" id="6_iyrsh"]
 [ext_resource type="Texture2D" uid="uid://j77w5ehojhkb" path="res://Village/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Tilesets/wall-8 - 2 tiles tall.png" id="7_cowvc"]
 [ext_resource type="Texture2D" uid="uid://b8yj12av8alq1" path="res://Village/Joyquest_demo_v1.5.3/PNG/spr_structures_exterior.png" id="8_dmiah"]
 [ext_resource type="Texture2D" uid="uid://3dx5aixejv8n" path="res://Village/16x16 TopDown Nature/16x16 TopDown Nature/4_Seasons_Trees.png" id="9_ieh46"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d3g6g0vwrbru3" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Standing.tscn" id="16_8ocoe"]
 [ext_resource type="PackedScene" uid="uid://6yph0ss0u11p" path="res://Scenes(Prefabs)/Villager_NPC/detecting_pete.tscn" id="17_8iifo"]
 [ext_resource type="PackedScene" uid="uid://d1vrbfplbmf57" path="res://Scenes(Prefabs)/Villager_NPC/Blinking_Red_Block.tscn" id="18_kpjs2"]
+[ext_resource type="Script" path="res://Scripts/ChangeScene.gd" id="19_eweou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27tey"]
 size = Vector2(22, 26)
@@ -6664,6 +6665,9 @@ sources/6 = SubResource("TileSetAtlasSource_ido2s")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcydt"]
 size = Vector2(148, 544)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_galnq"]
+size = Vector2(142, 203)
+
 [node name="Town" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -6722,7 +6726,7 @@ volume_db = -6.0
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("13_1dij0")]
-position = Vector2(806, 218)
+position = Vector2(927, 208)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -61.5)
@@ -6737,9 +6741,11 @@ position = Vector2(-64, -262)
 shape = SubResource("RectangleShape2D_mcydt")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(1338, 271)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+visible = false
 position = Vector2(4, -1)
 shape = SubResource("RectangleShape2D_mcydt")
 
@@ -6770,16 +6776,16 @@ position = Vector2(556, 498)
 position = Vector2(894, 500)
 
 [node name="villager_stand" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
-position = Vector2(1301, 498)
+position = Vector2(1354, 494)
 
 [node name="villager_stand3" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
-position = Vector2(1301, 375)
+position = Vector2(1354, 308)
 
 [node name="villager_stand4" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
-position = Vector2(1301, 312)
+position = Vector2(1354, 433)
 
 [node name="villager_stand2" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
-position = Vector2(1301, 437)
+position = Vector2(1354, 370)
 
 [node name="DetectingPete" parent="Villager_Holder" instance=ExtResource("17_8iifo")]
 z_index = -1
@@ -6793,3 +6799,15 @@ scale = Vector2(4, 4)
 
 [node name="Villager_Walking" parent="Villager_Holder" instance=ExtResource("14_ue7au")]
 position = Vector2(1214, 500)
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+script = ExtResource("19_eweou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(1272, 419.5)
+shape = SubResource("RectangleShape2D_galnq")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
