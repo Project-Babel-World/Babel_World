@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0v1mtnyy1cdc"]
+
+[ext_resource type="Texture2D" uid="uid://dct1kw03jdqp1" path="res://Village/Fantasy Swamp Forest/Free/Terrain_and_Props.png" id="1_euvmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdss5"]
+size = Vector2(70, 57)
+
+[node name="BounceMushroom" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_euvmo")
+region_enabled = true
+region_rect = Rect2(116, 488, 70, 56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wdss5")
