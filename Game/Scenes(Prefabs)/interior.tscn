@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cl7818rm3wn04"]
+[gd_scene load_steps=16 format=3 uid="uid://dwm4pf77df8y4"]
 
 [ext_resource type="Texture2D" uid="uid://creis36611737" path="res://Village/opp4_village_tiles/opp4_village_tiles/environment/tiles/village/tile_village_house.png" id="1_4n0gs"]
-[ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Fantasy Swamp Forest/stringstar fields/background_0.png" id="2_8q8gk"]
+[ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Village/stringstar fields/background_0.png" id="2_8q8gk"]
 [ext_resource type="Texture2D" uid="uid://dga3icir4rqh5" path="res://TileMaps/InsideBuilding/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="3_nxg7v"]
 [ext_resource type="Texture2D" uid="uid://b0ghes2g6ltn7" path="res://TileMaps/InsideBuilding/OLD SHOP/old shop tile_v1.png" id="4_esp71"]
 [ext_resource type="Texture2D" uid="uid://cboc3a80rca6v" path="res://TileMaps/InsideBuilding/Modern tiles_Free/Interiors_free/32x32/Interiors_free_32x32.png" id="5_bqa7q"]
@@ -13366,7 +13366,7 @@ sources/5 = SubResource("TileSetAtlasSource_ions5")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h13m4"]
 size = Vector2(62, 346)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Background0" type="Sprite2D" parent="."]
 position = Vector2(312.5, 191)
