@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dntl4kcvvna8x"]
+[gd_scene load_steps=2 format=3 uid="uid://ralfc3n02qag"]
 
-[ext_resource type="Script" path="res://dialogue_area.gd" id="1_ndcc5"]
+[ext_resource type="Script" path="res://world/dialog_area.gd" id="1_cqkug"]
 
-[node name="DialogueArea" type="Area2D"]
+[node name="DialogArea" type="Area2D"]
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("1_ndcc5")
+script = ExtResource("1_cqkug")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
