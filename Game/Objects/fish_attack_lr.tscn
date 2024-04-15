@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckld0nsu6q3fo"]
+
+[ext_resource type="Texture2D" uid="uid://dj7x76itt01y1" path="res://Village/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Tilesets/3/Attack.png" id="1_ivn46"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e10pj"]
+radius = 11.0003
+height = 47.9994
+
+[sub_resource type="Animation" id="Animation_4ekl5"]
+resource_name = "Swim"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.9, 1.1, 1.4, 1.7, 2, 2.3, 2.5, 2.7, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(29, 17), Vector2(40.9474, 17.2105), Vector2(113, -9), Vector2(127, -4), Vector2(226, 29), Vector2(254, 16), Vector2(308, -13), Vector2(322, -15), Vector2(341, -3), Vector2(421, 26), Vector2(444, 71), Vector2(6, 79)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.9, 1, 1.4, 1.7, 2, 2.5, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.379817, 0.379817, -0.562152, -0.10314, 0.557355, 0.557355, -0.386141, -0.386141, 0.38911, 0.253765, 2.85288]
+}
+
+[sub_resource type="Animation" id="Animation_psn1w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, 21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.379817]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1jl3r"]
+_data = {
+"RESET": SubResource("Animation_psn1w"),
+"Swim": SubResource("Animation_4ekl5")
+}
+
+[node name="FishAttackLR" type="Node2D"]
+
+[node name="Fish" type="AnimatableBody2D" parent="."]
+position = Vector2(256, 21)
+rotation = 0.379817
+scale = Vector2(1.67603, 1.67603)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Fish"]
+texture = ExtResource("1_ivn46")
+region_enabled = true
+region_rect = Rect2(1, 13, 44, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
+position = Vector2(-2, 0)
+rotation = -1.57108
+shape = SubResource("CapsuleShape2D_e10pj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish"]
+libraries = {
+"": SubResource("AnimationLibrary_1jl3r")
+}
+autoplay = "Swim"

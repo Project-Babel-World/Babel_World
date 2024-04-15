@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cx1dnv4vof47g"]
+[gd_scene load_steps=35 format=3 uid="uid://cx1dnv4vof47g"]
 
 [ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Village/stringstar fields/background_0.png" id="1_k60k6"]
 [ext_resource type="Texture2D" uid="uid://bmw0gvxrawkt7" path="res://Village/Heros/2 Owlet_Monster/Owlet_Monster.png" id="2_0d1re"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cqbfcmeblykfp" path="res://Village/opp4_village_tiles/opp4_village_tiles/environment/tiles/room/obj_indoors.png" id="11_fdpbr"]
 [ext_resource type="AudioStream" uid="uid://4hnuy1g2htmw" path="res://Village/Music/good-night-160166.mp3" id="12_ydw0q"]
 [ext_resource type="PackedScene" uid="uid://cexkco4k3o2ig" path="res://Scenes(Prefabs)/Player.tscn" id="13_1dij0"]
+[ext_resource type="Script" path="res://Scripts/BuildingToLobby.gd" id="14_m1tce"]
 [ext_resource type="PackedScene" uid="uid://drnv8ghcownsk" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Walking.tscn" id="14_ue7au"]
 [ext_resource type="PackedScene" uid="uid://1g7vx6itquc2" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Walking_Tiki.tscn" id="15_iooso"]
 [ext_resource type="PackedScene" uid="uid://d3g6g0vwrbru3" path="res://Scenes(Prefabs)/Villager_NPC/Villager_Standing.tscn" id="16_8ocoe"]
@@ -5031,6 +5032,9 @@ sources/4 = SubResource("TileSetAtlasSource_ki15t")
 sources/5 = SubResource("TileSetAtlasSource_ak3o8")
 sources/6 = SubResource("TileSetAtlasSource_ido2s")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7h18"]
+size = Vector2(0.111449, 2.00629)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_galnq"]
 size = Vector2(142, 203)
 
@@ -5102,7 +5106,18 @@ position = Vector2(0, -61.5)
 offset = Vector2(0, -2)
 zoom = Vector2(2, 2)
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1729, 491)
+scale = Vector2(84.8584, 37.8521)
+script = ExtResource("14_m1tce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0.00815392, 0.0113316)
+scale = Vector2(7.97092, -1.03839)
+shape = SubResource("RectangleShape2D_g7h18")
+
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(21, 9)
 script = ExtResource("19_eweou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
