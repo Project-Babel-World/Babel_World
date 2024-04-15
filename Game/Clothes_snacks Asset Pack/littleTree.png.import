@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgi2tqp7reel0"
-path="res://.godot/imported/image 6.png-52bfa99c3fd4a5e8031e69f74fa7860a.ctex"
+uid="uid://cpb3nl7ajafqf"
+path="res://.godot/imported/littleTree.png-9638848e1d7e2f81fa54bc41240ee50f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Other Grounds/Free Platform Game Assets/Platform Game Assets/Water Animation/png/1x/image 6.png"
-dest_files=["res://.godot/imported/image 6.png-52bfa99c3fd4a5e8031e69f74fa7860a.ctex"]
+source_file="res://Clothes_snacks Asset Pack/littleTree.png"
+dest_files=["res://.godot/imported/littleTree.png-9638848e1d7e2f81fa54bc41240ee50f.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=32
+process/size_limit=0
 detect_3d/compress_to=0

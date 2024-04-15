@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvhiqjwvucbfm"]
+
+[ext_resource type="Script" path="res://ui/dialog_player.gd" id="1_hs1gy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_848hr"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ojvpg"]
+specular_color = Color(0.909804, 0.447059, 0.858824, 1)
+
+[node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 1
+script = ExtResource("1_hs1gy")
+
+[node name="TextLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = 0.083
+anchor_bottom = 0.083
+offset_left = 8.0
+offset_top = 0.0999908
+offset_right = 666.0
+offset_bottom = 196.1
+label_settings = SubResource("LabelSettings_848hr")
+autowrap_mode = 2
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 5.0
+offset_top = 104.0
+offset_right = 668.0
+offset_bottom = 308.0
+texture = SubResource("CanvasTexture_ojvpg")
