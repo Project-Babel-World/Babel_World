@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bq0mka44ve8ay"]
+[gd_scene load_steps=39 format=3 uid="uid://bq0mka44ve8ay"]
 
 [ext_resource type="PackedScene" uid="uid://6yph0ss0u11p" path="res://Scenes(Prefabs)/Villager_NPC/detecting_pete.tscn" id="1_lfrwa"]
 [ext_resource type="Texture2D" uid="uid://s120rmf040ac" path="res://FrogDudes/Terrain/Terrain (16x16).png" id="2_d4s8s"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://cf7gjf4os3q3n" path="res://Other Grounds/Free Platform Game Assets/Platform Game Assets/Water Animation/png/1x/image 4.png" id="11_26g7c"]
 [ext_resource type="Texture2D" uid="uid://cmp8mkmt02yh7" path="res://Other Grounds/Free Platform Game Assets/Platform Game Assets/Water Animation/png/1x/image 5.png" id="12_jnpe8"]
 [ext_resource type="Texture2D" uid="uid://cajsgyykl231w" path="res://Village/stringstar fields/background_2.png" id="12_vipsv"]
+[ext_resource type="PackedScene" uid="uid://cv6sk5cdbmx1h" path="res://player_dialogue.tscn" id="19_6okpb"]
+[ext_resource type="PackedScene" uid="uid://dntl4kcvvna8x" path="res://dialogue_area.tscn" id="19_n76ny"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwou7"]
 texture = ExtResource("2_d4s8s")
@@ -2382,6 +2384,12 @@ sources/12 = SubResource("TileSetAtlasSource_bvb67")
 sources/13 = SubResource("TileSetAtlasSource_u4ggt")
 sources/14 = SubResource("TileSetAtlasSource_2aqwd")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftjws"]
+size = Vector2(20, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3hfw"]
+size = Vector2(199.946, 272)
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(79, 12)
 metadata/_edit_horizontal_guides_ = [270.0]
@@ -2414,7 +2422,13 @@ limit_left = -10
 limit_top = -500
 limit_bottom = 700
 
-[node name="Area2D" type="Area2D" parent="Player"]
+[node name="DialogueInteractionArea" type="Area2D" parent="Player"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/DialogueInteractionArea"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_ftjws")
 
 [node name="Villager_Walking" parent="." instance=ExtResource("6_urnnp")]
 visible = false
@@ -2432,6 +2446,15 @@ position = Vector2(794, 241)
 visible = false
 z_index = 1
 position = Vector2(506, 446)
+
+[node name="PlayerDialogue" parent="." instance=ExtResource("19_6okpb")]
+
+[node name="DialogueArea1" parent="." instance=ExtResource("19_n76ny")]
+
+[node name="CollisionShape2D" parent="DialogueArea1" index="0"]
+z_index = 11
+position = Vector2(9, 427)
+shape = SubResource("RectangleShape2D_s3hfw")
 
 [node name="Sky" type="Sprite2D" parent="."]
 z_index = -2
@@ -2475,3 +2498,5 @@ texture = ExtResource("12_vipsv")
 [node name="darkBlue" type="Sprite2D" parent="Sky/Sky3"]
 position = Vector2(0, -8)
 texture = ExtResource("11_6ueyk")
+
+[editable path="DialogueArea1"]

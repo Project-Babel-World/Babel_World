@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv6sk5cdbmx1h"]
+
+[ext_resource type="Script" path="res://player_dialogue.gd" id="1_sojci"]
+
+[sub_resource type="Theme" id="Theme_5sfao"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k1676"]
+specular_color = Color(0.94902, 0.431373, 0.619608, 1)
+
+[node name="PlayerDialogue" type="CanvasLayer"]
+script = ExtResource("1_sojci")
+
+[node name="TextLabel" type="Label" parent="."]
+z_index = 5
+offset_left = 38.0
+offset_top = 10.0
+offset_right = 199.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "This is a testing text for autowrap"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 31.0
+offset_top = 5.0
+offset_right = 205.0
+offset_bottom = 121.0
+theme = SubResource("Theme_5sfao")
+texture = SubResource("CanvasTexture_k1676")
