@@ -8,7 +8,7 @@ extends Area2D
 func _on_body_entered(body):
 	if body.name == "Player":
 	# Perform actions when the player enters the area
-		print("Player entered the area")
+		queue_free()
 		fsm.change_state(detected_state)
 
 
