@@ -59,3 +59,4 @@ func _physics_process(delta): # runs at 6fps ?
 	if (position.y > 3000):
 		respawn(0, 500)
 
+

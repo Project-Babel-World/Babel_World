@@ -150,11 +150,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5p037"]
-size = Vector2(20, 26)
+size = Vector2(41, 49.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi227"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
 texture_filter = 1
 scale = Vector2(2, 2)
@@ -163,12 +161,14 @@ platform_floor_layers = 4294967291
 script = ExtResource("1_m4opx")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, -10.75)
+scale = Vector2(1.75, 1.67188)
 sprite_frames = SubResource("SpriteFrames_tlfck")
 autoplay = "default"
 frame_progress = 0.28422
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(10.5, -8.75)
 shape = SubResource("RectangleShape2D_5p037")
 
 [node name="Direction" type="Marker2D" parent="."]

@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://r5hmi2puengf"]
+
+[ext_resource type="Texture2D" uid="uid://dct1kw03jdqp1" path="res://Village/Fantasy Swamp Forest/Free/Terrain_and_Props.png" id="1_xpi13"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqmqk"]
+size = Vector2(94.5517, 27.5)
+
+[sub_resource type="Animation" id="Animation_wntg7"]
+resource_name = "move_loopRL"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(425, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kdp8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(425, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w15uk"]
+_data = {
+"RESET": SubResource("Animation_kdp8a"),
+"move_loopRL": SubResource("Animation_wntg7")
+}
+
+[node name="MovingTargetLR" type="Node2D"]
+position = Vector2(63, 0)
+
+[node name="movablePlatform" type="AnimatableBody2D" parent="."]
+position = Vector2(425, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="movablePlatform"]
+position = Vector2(38, 56)
+scale = Vector2(2.90945, -2.61973)
+texture = ExtResource("1_xpi13")
+region_enabled = true
+region_rect = Rect2(80, 160, 80, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movablePlatform"]
+position = Vector2(38.68, 63.2)
+scale = Vector2(2.32, 0.96)
+shape = SubResource("RectangleShape2D_cqmqk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="movablePlatform"]
+libraries = {
+"": SubResource("AnimationLibrary_w15uk")
+}
+autoplay = "move_loopRL"
