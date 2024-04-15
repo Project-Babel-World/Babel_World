@@ -1,8 +1,7 @@
 extends Area2D
 
 
-
-
 func _on_body_entered(body):
-	Checkpoint.last_position = global_position
+	if body.name == "Player":
+		Checkpoint.last_position = global_position
 	
