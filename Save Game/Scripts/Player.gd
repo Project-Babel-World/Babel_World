@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -850.0
 @onready var sprite_2d = $Sprite2D
@@ -8,6 +7,9 @@ const JUMP_VELOCITY = -850.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func respawn(newx, newy):
+	position.x = newx
+	position.y = newy
 
 func _physics_process(delta): # runs at 6fps ? 
 	# Add the gravity.
@@ -19,7 +21,6 @@ func _physics_process(delta): # runs at 6fps ?
 	else:
 		sprite_2d.animation ="default"
 		
-
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -40,5 +41,12 @@ func _physics_process(delta): # runs at 6fps ?
 		sprite_2d.flip_h = isLeft
 		
 	# Handle fall
+	##var checkPoint = CheckPoint.new()
+	var x = position.x
+	var y = position.y
+	if (y > 3000):
+		#respawn(0, 500)
+		respawn(3500, 500)
+		sprite_2d.flip_h = 0
 
 	
