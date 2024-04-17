@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://nxqfnefb5tpt" path="res://Village/stringstar fields/background_1.png" id="13_4pkj4"]
 [ext_resource type="PackedScene" uid="uid://c0v1mtnyy1cdc" path="res://Objects/BounceMushroom.tscn" id="15_u313v"]
 [ext_resource type="PackedScene" uid="uid://ckld0nsu6q3fo" path="res://Objects/fish_attack_lr.tscn" id="17_0t1s8"]
-[ext_resource type="Script" path="res://Scenes(Prefabs)/LevelToRest.gd" id="18_avpja"]
+[ext_resource type="Script" path="res://Scenes(Prefabs)/ToVillage.gd" id="18_uwpnn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwou7"]
 texture = ExtResource("7_yo4q5")
@@ -2941,8 +2941,8 @@ sources/2 = SubResource("TileSetAtlasSource_fl3ut")
 sources/3 = SubResource("TileSetAtlasSource_6hyhh")
 sources/1 = SubResource("TileSetAtlasSource_mbtk1")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cskk"]
-size = Vector2(1463.5, 435)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3h6t"]
+size = Vector2(329, 595)
 
 [node name="Node2D" type="Node2D"]
 
@@ -3058,9 +3058,12 @@ texture = ExtResource("13_4pkj4")
 visible = false
 position = Vector2(3525, 668)
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("18_avpja")
+[node name="ToVillage" type="Area2D" parent="."]
+script = ExtResource("18_uwpnn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5985, 351)
-shape = SubResource("RectangleShape2D_8cskk")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToVillage"]
+position = Vector2(5475, 267.5)
+shape = SubResource("RectangleShape2D_g3h6t")
+
+[connection signal="body_entered" from="ToVillage" to="ToVillage" method="_on_body_entered"]
+[connection signal="body_exited" from="ToVillage" to="ToVillage" method="_on_body_exited"]

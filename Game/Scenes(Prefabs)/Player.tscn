@@ -152,7 +152,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5p037"]
 size = Vector2(41, 49.5)
 
+<<<<<<< HEAD
 
+=======
+[sub_resource type="CircleShape2D" id="CircleShape2D_1m81v"]
+
+[node name="Character" type="CharacterBody2D"]
+>>>>>>> 200ef9246d45d9387b10cdef13f6e2880374969f
 z_index = 2
 texture_filter = 1
 scale = Vector2(2, 2)
@@ -178,5 +184,11 @@ collision_layer = 0
 collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+<<<<<<< HEAD
 position = Vector2(16.5, 2)
 shape = SubResource("RectangleShape2D_yi227")
+=======
+position = Vector2(21.5, -8)
+scale = Vector2(2.3, 2.3)
+shape = SubResource("CircleShape2D_1m81v")
+>>>>>>> 200ef9246d45d9387b10cdef13f6e2880374969f

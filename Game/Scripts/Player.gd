@@ -27,6 +27,13 @@ func _physics_process(delta): # runs at 6fps ?
 			return
 	
 	# Add the gravity.
+		
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() >0:
+			DialogueManager.show_dialogue_balloon(load("res://dialog/main.dialogue"), "start") 
+			return
+			
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		sprite_2d.animation = "jumping"
