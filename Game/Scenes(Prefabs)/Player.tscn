@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cexkco4k3o2ig"]
+[gd_scene load_steps=26 format=3 uid="uid://cexkco4k3o2ig"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_m4opx"]
 [ext_resource type="Texture2D" uid="uid://bkdwgnr87v0vj" path="res://free-pixel-art-tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Idle_4.png" id="2_t1sfp"]
@@ -152,6 +152,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5p037"]
 size = Vector2(41, 49.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1m81v"]
+
 [node name="Character" type="CharacterBody2D"]
 z_index = 2
 texture_filter = 1
@@ -169,3 +171,14 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10.5, -8.75)
 shape = SubResource("RectangleShape2D_5p037")
+
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+position = Vector2(21.5, -8)
+scale = Vector2(2.3, 2.3)
+shape = SubResource("CircleShape2D_1m81v")
