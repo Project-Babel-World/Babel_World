@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://ttmi62wrcd57" path="res://dialog/actionable.tscn" id="17_7y1il"]
 [ext_resource type="PackedScene" uid="uid://6yph0ss0u11p" path="res://Scenes(Prefabs)/Villager_NPC/detecting_pete.tscn" id="17_8iifo"]
 [ext_resource type="PackedScene" uid="uid://d1vrbfplbmf57" path="res://Scenes(Prefabs)/Villager_NPC/Blinking_Red_Block.tscn" id="18_kpjs2"]
-[ext_resource type="Resource" uid="uid://cq3tdsdsoac1h" path="res://main.dialogue" id="18_x2b10"]
+[ext_resource type="Resource" uid="uid://cq3tdsdsoac1h" path="res://dialog/main.dialogue" id="18_x2b10"]
 [ext_resource type="Script" path="res://Scripts/ChangeScene.gd" id="19_eweou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27tey"]

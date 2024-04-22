@@ -1,17 +1,11 @@
 ~ start
 
-<<<<<<< HEAD
-set in_talk = true 
-=======
->>>>>>> 200ef9246d45d9387b10cdef13f6e2880374969f
 Person: Oye, tu! Queres unos manzanas
 
 if has_met == "False":
 	- Stare Blankley
 	- ?????
 	Person: No mi vas a contestar
-	- Stare Blankley
-	- ????
 	Anry Person: Add angry dialogue
 	Cidi: Sorry, I don't know
 	Person: Oh - confused, brighten
@@ -33,10 +27,5 @@ elif has_met =="True":
 	Billy: Welcome back Cidi
 else: 
 	Game: IDK how we got here
-	
-<<<<<<< HEAD
-set in_talk = false
-=======
-
->>>>>>> 200ef9246d45d9387b10cdef13f6e2880374969f
 => END
+
