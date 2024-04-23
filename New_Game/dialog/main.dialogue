@@ -1,0 +1,34 @@
+~ start
+
+Person: Oye, tu! Queres unos manzanas
+
+if has_met == "False":
+	- Stare Blankley
+	- ?????
+	Person: No mi vas a contestar
+	- Stare Blankley
+	- ????
+	Anry Person: Add angry dialogue
+	Cidi: Sorry, I don't know
+	Person: Oh - confused, brighten
+	Person: Why didn't you say that menso?
+	Person: Making me angry for no reason should have just said you are new to these parts!
+	Person: HAHA
+	Person: Bueno, my name is Maricella, y el tullo?
+	Player: Tullo?
+	Maricella: New and don't know the language. Your name...nombre
+	- Tell her your name
+			set has_met ="True"
+			Marciella: Hmm… well let  me just say you may want to learn the language quick… some people here only know it and it just increases the further in you go. Here I’ll go ahead and write down some key phrases you should know. Do you have  cuadreno, that is a book to write in?
+			Cidi: No
+			Maricella: No worries. Lucky for you I own a bodega, for all your silly needs
+	- Leave conversation
+			Player: And I never will.
+			Billy: :(
+elif has_met =="True":
+	Billy: Welcome back Cidi
+else: 
+	Game: IDK how we got here
+	
+
+=> END

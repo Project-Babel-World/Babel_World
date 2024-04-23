@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://6b1irn1ythfl"]
+
+[ext_resource type="Script" path="res://Scripts/TitleScreen.gd" id="1_2g26a"]
+[ext_resource type="Texture2D" uid="uid://36o88ka7atm" path="res://Scenes(Prefabs)/Untitled8.png" id="2_wc0n5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gd1tb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ealn7"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2g26a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1923.0
+offset_bottom = 1050.0
+texture = ExtResource("2_wc0n5")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 83.0
+offset_right = 441.0
+offset_bottom = 228.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gd1tb")
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 254.0
+offset_right = 445.0
+offset_bottom = 399.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ealn7")
+text = "Quit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
