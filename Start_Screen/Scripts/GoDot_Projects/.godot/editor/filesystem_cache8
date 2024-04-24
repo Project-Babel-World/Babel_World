@@ -1,0 +1,41 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1706499175
+icon.svg::CompressedTexture2D::4108550106133049502::1706493330::1706493340::1::::<><>::
+main.gd::GDScript::-1::1706494868::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1552906865779528259::1706499066::0::1::::<><>::res://main.gd
+our_world.tscn::PackedScene::2638865232708713144::1706499066::0::1::::<><>::uid://oipry1m8hxlm::::res://Player/player.tscn
+::res://Aseprite/::1706495244
+::res://Player/::1706499158
+player.gd::GDScript::-1::1706499066::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::1000101247667756326::1706499158::0::1::::<><>::res://Player/player.gd<>uid://dx2mnexfhhsk5::::res://satyr character/satyr-Sheet.png
+::res://PNG/::1706496130
+back.png::CompressedTexture2D::8967994442690284678::1706495244::1706495244::1::::<><>::
+middle.png::CompressedTexture2D::448891050346672711::1706495244::1706495244::1::::<><>::
+near.png::CompressedTexture2D::3186828172054051280::1706495244::1706495244::1::::<><>::
+tileset.png::CompressedTexture2D::6889530798373794463::1706495244::1706495244::1::::<><>::
+::res://PNG/Props/::1706495244
+crystal-1.png::CompressedTexture2D::2526472691632762190::1706495244::1706495244::1::::<><>::
+crystal-2.png::CompressedTexture2D::5880365024237627542::1706495244::1706495244::1::::<><>::
+plant-1.png::CompressedTexture2D::8122448277082546031::1706495244::1706495244::1::::<><>::
+plant-2.png::CompressedTexture2D::1484871893224319633::1706495244::1706495244::1::::<><>::
+::res://Preview/::1706495244
+rocky-pass-big.png::CompressedTexture2D::8664127722155670457::1706495244::1706495244::1::::<><>::
+rocky-pass.png::CompressedTexture2D::5274813312704799505::1706495244::1706495244::1::::<><>::
+::res://Rocky Pass Files/::1706495283
+public-license.txt::TextFile::-1::1706495283::0::1::::<><>::
+::res://Rocky Pass Files/Aseprite/::1706495283
+::res://Rocky Pass Files/PNG/::1706495283
+back.png::CompressedTexture2D::2788660922189340955::1706495283::1706495283::1::::<><>::
+middle.png::CompressedTexture2D::8754561072430945348::1706495283::1706495283::1::::<><>::
+near.png::CompressedTexture2D::7034972922472804393::1706495283::1706495283::1::::<><>::
+tileset.png::CompressedTexture2D::1225668335221409930::1706495283::1706495283::1::::<><>::
+::res://Rocky Pass Files/PNG/Props/::1706495283
+crystal-1.png::CompressedTexture2D::7212606681946241345::1706495283::1706495283::1::::<><>::
+crystal-2.png::CompressedTexture2D::1646705842581501163::1706495283::1706495283::1::::<><>::
+plant-1.png::CompressedTexture2D::3238192952821041244::1706495283::1706495283::1::::<><>::
+plant-2.png::CompressedTexture2D::6718589404133968102::1706495283::1706495283::1::::<><>::
+::res://Rocky Pass Files/Preview/::1706495283
+rocky-pass-big.png::CompressedTexture2D::5597360203196929543::1706495283::1706495283::1::::<><>::
+rocky-pass.png::CompressedTexture2D::7884675846409751607::1706495283::1706495283::1::::<><>::
+::res://satyr character/::1706496130
+satyr-Sheet.png::CompressedTexture2D::8830095719208353090::1706495864::1706496130::1::::<><>::
