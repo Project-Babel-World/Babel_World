@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://ko2r5symifka"]
+
+[ext_resource type="Texture2D" uid="uid://dikwivgk732p1" path="res://PNG/Untitled11.png" id="1_16nvp"]
+[ext_resource type="Script" path="res://Objects/Inventory.gd" id="2_dlyax"]
+
+[node name="BagPack" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_16nvp")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+texture_normal = ExtResource("1_16nvp")
+
+[node name="Inventory" type="MenuButton" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -644.0
+offset_right = 644.0
+offset_bottom = 728.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.172549, 0.0980392, 0.0980392, 1)
+theme_override_font_sizes/font_size = 80
+text = "Inventory"
+icon = ExtResource("1_16nvp")
+icon_alignment = 1
+script = ExtResource("2_dlyax")

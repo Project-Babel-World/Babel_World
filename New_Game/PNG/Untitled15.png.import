@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceny2py3dnepb"
-path="res://.godot/imported/Untitled14.jpg-ead927617c4e4b4e407d023f320c80d4.ctex"
+uid="uid://nv4l2acwyjwd"
+path="res://.godot/imported/Untitled15.png-151f32bb2c4b3fb2181340fe45dab61e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes(Prefabs)/Untitled14.jpg"
-dest_files=["res://.godot/imported/Untitled14.jpg-ead927617c4e4b4e407d023f320c80d4.ctex"]
+source_file="res://PNG/Untitled15.png"
+dest_files=["res://.godot/imported/Untitled15.png-151f32bb2c4b3fb2181340fe45dab61e.ctex"]
 
 [params]
 

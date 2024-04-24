@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b7ds54bx0t87c"]
+[gd_scene load_steps=29 format=3 uid="uid://b7ds54bx0t87c"]
 
 [ext_resource type="PackedScene" uid="uid://6yph0ss0u11p" path="res://Scenes(Prefabs)/Villager_NPC/detecting_pete.tscn" id="1_w6lei"]
 [ext_resource type="PackedScene" uid="uid://cexkco4k3o2ig" path="res://Scenes(Prefabs)/Player.tscn" id="2_u3y6q"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://c0v1mtnyy1cdc" path="res://Objects/BounceMushroom.tscn" id="15_u313v"]
 [ext_resource type="PackedScene" uid="uid://ckld0nsu6q3fo" path="res://Objects/fish_attack_lr.tscn" id="17_0t1s8"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/ToVillage.gd" id="18_uwpnn"]
+[ext_resource type="PackedScene" uid="uid://boj143xougsyo" path="res://Objects/collectable.tscn" id="19_p4v8m"]
+[ext_resource type="Script" path="res://Scripts/collectable.gd" id="20_2nx0t"]
+[ext_resource type="Texture2D" uid="uid://bp7hj1r834mil" path="res://PNG/Untitled14.png" id="21_reko7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwou7"]
 texture = ExtResource("7_yo4q5")
@@ -2944,18 +2947,21 @@ sources/1 = SubResource("TileSetAtlasSource_mbtk1")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3h6t"]
 size = Vector2(329, 595)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_76du6"]
+radius = 28.1603
+
 [node name="Node2D" type="Node2D"]
 
 [node name="DetectingPete2" parent="." instance=ExtResource("1_w6lei")]
 visible = false
 position = Vector2(153, 329)
 
-[node name="Player2" parent="." instance=ExtResource("2_u3y6q")]
+[node name="Player_Rabbit" parent="." instance=ExtResource("2_u3y6q")]
 position = Vector2(-44, 418)
 scale = Vector2(2.5, 2.5)
 platform_floor_layers = 4294967293
 
-[node name="Camera2D" type="Camera2D" parent="Player2"]
+[node name="Camera2D" type="Camera2D" parent="Player_Rabbit"]
 zoom = Vector2(1.5, 1.5)
 limit_left = -10
 limit_top = -500
@@ -2993,6 +2999,10 @@ position = Vector2(1565, 322)
 [node name="MovingTarget4" parent="." instance=ExtResource("7_4tveh")]
 position = Vector2(4025, 452)
 
+[node name="Collectable" parent="." instance=ExtResource("19_p4v8m")]
+position = Vector2(570, 535)
+scale = Vector2(0.102, 0.1)
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(3.5, 3.5)
@@ -3010,6 +3020,7 @@ layer_4/name = "Goal"
 layer_4/tile_data = PackedInt32Array(524383, 655362, 28, 589919, 655362, 29, 524384, 720898, 28, 589920, 720898, 29, 524385, 786434, 28, 589921, 786434, 29)
 
 [node name="Sky" type="Sprite2D" parent="."]
+visible = false
 z_index = -2
 position = Vector2(1152.25, 108.375)
 scale = Vector2(8.72743, 7.29306)
@@ -3065,5 +3076,21 @@ script = ExtResource("18_uwpnn")
 position = Vector2(5475, 267.5)
 shape = SubResource("RectangleShape2D_g3h6t")
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(2882, 483)
+script = ExtResource("20_2nx0t")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(3, 13)
+scale = Vector2(0.119531, 0.117969)
+texture = ExtResource("21_reko7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_76du6")
+
 [connection signal="body_entered" from="ToVillage" to="ToVillage" method="_on_body_entered"]
 [connection signal="body_exited" from="ToVillage" to="ToVillage" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
