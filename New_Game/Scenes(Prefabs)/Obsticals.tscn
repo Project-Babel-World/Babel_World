@@ -3020,7 +3020,6 @@ layer_4/name = "Goal"
 layer_4/tile_data = PackedInt32Array(524383, 655362, 28, 589919, 655362, 29, 524384, 720898, 28, 589920, 720898, 29, 524385, 786434, 28, 589921, 786434, 29)
 
 [node name="Sky" type="Sprite2D" parent="."]
-visible = false
 z_index = -2
 position = Vector2(1152.25, 108.375)
 scale = Vector2(8.72743, 7.29306)

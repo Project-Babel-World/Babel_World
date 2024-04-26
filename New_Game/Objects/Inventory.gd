@@ -19,3 +19,11 @@ Notebook would have two tabs
 One for objects
 Another for phrases
 '''
+
+
+
+
+func _on_pressed():
+	#creat popup with
+	
+	pass # Replace with function body.

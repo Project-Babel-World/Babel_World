@@ -29,3 +29,5 @@ text = "Inventory"
 icon = ExtResource("1_16nvp")
 icon_alignment = 1
 script = ExtResource("2_dlyax")
+
+[connection signal="pressed" from="Inventory" to="Inventory" method="_on_pressed"]
