@@ -1,16 +1,11 @@
 extends Area2D
 
+@onready var sprite_2d = $AnimatedSprite2D
 
+func _ready():
+	sprite_2d.animation = "shoe"
 
 func _on_body_entered(body):
-	print(body.name)
 	if body.name == "Player":
 		queue_free()
-	'''
-	print("Player entered!")
-	print(body.name)
-
-	if body.name == "Character":
-		queue_free()
-		'''
 

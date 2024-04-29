@@ -14,7 +14,6 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body.name == "Player":
-		print("Player left area")
 		await get_tree().create_timer(.5).timeout
 		# testing out delaying a function, makes it so villager doesnt immediatly swap to idle
 		fsm.change_state(idle_state)
