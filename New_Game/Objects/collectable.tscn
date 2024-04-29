@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://boj143xougsyo"]
 
 [ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_t8blw"]
-[ext_resource type="Texture2D" uid="uid://d3afog4wmsgtk" path="res://PNG/Untitled16.png" id="2_dhyhm"]
+[ext_resource type="Texture2D" uid="uid://d3afog4wmsgtk" path="res://PNG/Button.png" id="2_3chkp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4uqi"]
 radius = 186.038
@@ -11,7 +11,7 @@ script = ExtResource("1_t8blw")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_dhyhm")
+texture = ExtResource("2_3chkp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

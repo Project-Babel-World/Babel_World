@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b7ds54bx0t87c"]
+[gd_scene load_steps=28 format=3 uid="uid://b7ds54bx0t87c"]
 
 [ext_resource type="PackedScene" uid="uid://6yph0ss0u11p" path="res://Scenes(Prefabs)/Villager_NPC/detecting_pete.tscn" id="1_w6lei"]
 [ext_resource type="PackedScene" uid="uid://cexkco4k3o2ig" path="res://Scenes(Prefabs)/Player.tscn" id="2_u3y6q"]
@@ -18,9 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://c0v1mtnyy1cdc" path="res://Objects/BounceMushroom.tscn" id="15_u313v"]
 [ext_resource type="PackedScene" uid="uid://ckld0nsu6q3fo" path="res://Objects/fish_attack_lr.tscn" id="17_0t1s8"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/ToVillage.gd" id="18_uwpnn"]
-[ext_resource type="PackedScene" uid="uid://boj143xougsyo" path="res://Objects/collectable.tscn" id="19_p4v8m"]
-[ext_resource type="Script" path="res://Scripts/collectable.gd" id="20_2nx0t"]
-[ext_resource type="Texture2D" uid="uid://bp7hj1r834mil" path="res://PNG/Untitled14.png" id="21_reko7"]
+[ext_resource type="Script" path="res://Scripts/AttemptedPopUp.gd" id="22_4guss"]
+[ext_resource type="AudioStream" uid="uid://4hnuy1g2htmw" path="res://Village/Music/good-night-160166.mp3" id="23_og5kx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwou7"]
 texture = ExtResource("7_yo4q5")
@@ -2947,8 +2946,8 @@ sources/1 = SubResource("TileSetAtlasSource_mbtk1")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3h6t"]
 size = Vector2(329, 595)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_76du6"]
-radius = 28.1603
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4yw3"]
+size = Vector2(70.7454, 74.726)
 
 [node name="Node2D" type="Node2D"]
 
@@ -2999,11 +2998,7 @@ position = Vector2(1565, 322)
 [node name="MovingTarget4" parent="." instance=ExtResource("7_4tveh")]
 position = Vector2(4025, 452)
 
-[node name="Collectable" parent="." instance=ExtResource("19_p4v8m")]
-position = Vector2(570, 535)
-scale = Vector2(0.102, 0.1)
-
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Setting" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(3.5, 3.5)
 tile_set = SubResource("TileSet_vlai6")
@@ -3075,21 +3070,19 @@ script = ExtResource("18_uwpnn")
 position = Vector2(5475, 267.5)
 shape = SubResource("RectangleShape2D_g3h6t")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(2882, 483)
-script = ExtResource("20_2nx0t")
-metadata/_edit_group_ = true
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(3399, 507)
+script = ExtResource("22_4guss")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(3, 13)
-scale = Vector2(0.119531, 0.117969)
-texture = ExtResource("21_reko7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0.5, -19)
+scale = Vector2(1.87998, 2.92)
+shape = SubResource("RectangleShape2D_j4yw3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(-1, 1)
-shape = SubResource("CircleShape2D_76du6")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_og5kx")
 
 [connection signal="body_entered" from="ToVillage" to="ToVillage" method="_on_body_entered"]
 [connection signal="body_exited" from="ToVillage" to="ToVillage" method="_on_body_exited"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

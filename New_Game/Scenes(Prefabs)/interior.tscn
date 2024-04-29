@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwm4pf77df8y4"]
+[gd_scene load_steps=17 format=3 uid="uid://dwm4pf77df8y4"]
 
 [ext_resource type="Texture2D" uid="uid://creis36611737" path="res://Village/opp4_village_tiles/opp4_village_tiles/environment/tiles/village/tile_village_house.png" id="1_4n0gs"]
 [ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Village/stringstar fields/background_0.png" id="2_8q8gk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cboc3a80rca6v" path="res://TileMaps/InsideBuilding/Modern tiles_Free/Interiors_free/32x32/Interiors_free_32x32.png" id="5_bqa7q"]
 [ext_resource type="Texture2D" uid="uid://87rxcv028y4" path="res://TileMaps/InsideBuilding/Modern tiles_Free/Interiors_free/48x48/Interiors_free_48x48.png" id="6_frdsc"]
 [ext_resource type="Script" path="res://Scripts/InteriorToRest.gd" id="7_72bb8"]
+[ext_resource type="AudioStream" uid="uid://4hnuy1g2htmw" path="res://Village/Music/good-night-160166.mp3" id="8_gsjjq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f87hl"]
 texture = ExtResource("1_4n0gs")
@@ -13389,3 +13390,6 @@ script = ExtResource("7_72bb8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-16, 163)
 shape = SubResource("RectangleShape2D_h13m4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_gsjjq")

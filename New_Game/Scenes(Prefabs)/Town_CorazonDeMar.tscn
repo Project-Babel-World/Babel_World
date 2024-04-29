@@ -5051,8 +5051,8 @@ size = Vector2(148, 544)
 z_index = -2
 offset_left = -414.0
 offset_top = -328.0
-offset_right = 1872.0
-offset_bottom = 680.0
+offset_right = 1958.0
+offset_bottom = 662.0
 texture = ExtResource("1_k60k6")
 
 [node name="Mr_Owl" type="RigidBody2D" parent="."]
