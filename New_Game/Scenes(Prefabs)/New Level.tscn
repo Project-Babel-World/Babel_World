@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c7iurm3igkjhc"]
+[gd_scene load_steps=73 format=3 uid="uid://c7iurm3igkjhc"]
 
 [ext_resource type="PackedScene" uid="uid://ralfc3n02qag" path="res://world/dialog_area.tscn" id="1_6whwd"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/New Level.gd" id="1_ikid8"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://bur7dj3e711cs" path="res://Objects/Question_Shoes1.tscn" id="27_a7ly6"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/NewLevelBack2Village.gd" id="28_m6rmo"]
 [ext_resource type="AudioStream" uid="uid://4hnuy1g2htmw" path="res://Village/Music/good-night-160166.mp3" id="30_iwy28"]
+[ext_resource type="Script" path="res://Scripts/ToObsticals.gd" id="31_4j1u7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e1ec"]
 size = Vector2(137, 209)
@@ -2587,6 +2588,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hu50"]
 size = Vector2(361.25, 843.625)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5imew"]
+size = Vector2(249, 197)
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(79, 12)
 script = ExtResource("1_ikid8")
@@ -2753,10 +2757,20 @@ script = ExtResource("28_m6rmo")
 position = Vector2(3615, 251)
 shape = SubResource("RectangleShape2D_5hu50")
 
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+script = ExtResource("31_4j1u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1755.5, 67)
+shape = SubResource("RectangleShape2D_5imew")
+
 [connection signal="body_entered" from="Checkpoint1" to="Checkpoint1" method="_on_body_entered"]
 [connection signal="body_entered" from="Collectable" to="Collectable" method="_on_body_entered"]
 [connection signal="body_entered" from="TransitionToVillage" to="TransitionToVillage" method="_on_body_entered"]
 [connection signal="body_exited" from="TransitionToVillage" to="TransitionToVillage" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 
 [editable path="DialogArea1"]
 [editable path="DialogArea2"]

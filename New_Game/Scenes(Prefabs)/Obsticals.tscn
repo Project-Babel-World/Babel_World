@@ -2956,6 +2956,17 @@ size = Vector2(70.7454, 74.726)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="CanvasGroup" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -295.0
+offset_right = 49.0
+offset_bottom = -117.0
+grow_vertical = 0
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_fltba")
 volume_db = -0.335
@@ -3068,7 +3079,22 @@ texture = ExtResource("12_7g8p4")
 position = Vector2(0, -8)
 texture = ExtResource("13_4pkj4")
 
+[node name="Sky3" type="Sprite2D" parent="Sky/Sky3"]
+z_index = -2
+position = Vector2(208.996, -0.0514188)
+texture = ExtResource("11_iqbkw")
+
+[node name="darkPurple" type="Sprite2D" parent="Sky/Sky3/Sky3"]
+z_index = 1
+position = Vector2(0, 1)
+texture = ExtResource("12_7g8p4")
+
+[node name="darkBlue" type="Sprite2D" parent="Sky/Sky3/Sky3"]
+position = Vector2(0, -8)
+texture = ExtResource("13_4pkj4")
+
 [node name="Node2D" parent="." instance=ExtResource("15_u313v")]
+visible = false
 
 [node name="FishAttackLR" parent="." instance=ExtResource("17_0t1s8")]
 visible = false
