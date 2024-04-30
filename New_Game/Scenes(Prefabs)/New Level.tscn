@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=77 format=3 uid="uid://c7iurm3igkjhc"]
-
+[gd_scene load_steps=78 format=3 uid="uid://c7iurm3igkjhc"]
 
 [ext_resource type="PackedScene" uid="uid://ralfc3n02qag" path="res://world/dialog_area.tscn" id="1_6whwd"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/New Level.gd" id="1_ikid8"]
@@ -29,18 +27,15 @@
 [ext_resource type="Texture2D" uid="uid://bppmqkom47cv1" path="res://Clothes_snacks Asset Pack/bigTree.png" id="24_qnkvc"]
 [ext_resource type="PackedScene" uid="uid://bvhiqjwvucbfm" path="res://ui/dialog_player.tscn" id="25_3xdhh"]
 [ext_resource type="Texture2D" uid="uid://mvaholtj43gl" path="res://Clothes_snacks Asset Pack/Shirt.png" id="25_u260g"]
-
 [ext_resource type="PackedScene" uid="uid://3cp1xb7tytpk" path="res://Objects/question_shoes.tscn" id="27_j76oe"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/Collectable.gd" id="27_r5a4s"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/NewLevelBack2Village.gd" id="28_m6rmo"]
 [ext_resource type="Texture2D" uid="uid://b87a3gm0uqygu" path="res://Clothes_snacks Asset Pack/Untitled14.png" id="28_ohphw"]
 [ext_resource type="Texture2D" uid="uid://c5x31hdbn06k6" path="res://Clothes_snacks Asset Pack/Untitled15.png" id="29_wrm1b"]
+[ext_resource type="AudioStream" uid="uid://4hnuy1g2htmw" path="res://Village/Music/good-night-160166.mp3" id="30_iwy28"]
 [ext_resource type="Texture2D" uid="uid://cpb3nl7ajafqf" path="res://Clothes_snacks Asset Pack/littleTree.png" id="31_0mk3x"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/Collectable2.gd" id="32_bcri8"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/Collectable3.gd" id="32_phbby"]
-[ext_resource type="Script" path="res://Scenes(Prefabs)/NewLevelBack2Village.gd" id="28_m6rmo"]
-[ext_resource type="Script" path="res://Scripts/ToObsticals.gd" id="31_4j1u7"]
-[ext_resource type="AudioStream" uid="uid://4hnuy1g2htmw" path="res://Village/Music/good-night-160166.mp3" id="30_iwy28"]
 [ext_resource type="PackedScene" uid="uid://bxl6hy1h1yyov" path="res://Objects/questions_dress.tscn" id="34_0aha0"]
 [ext_resource type="PackedScene" uid="uid://r2kn1yay1jmw" path="res://Objects/question_hairbrush.tscn" id="36_mtocb"]
 
@@ -2560,19 +2555,6 @@ sources/14 = SubResource("TileSetAtlasSource_2aqwd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50t7d"]
 size = Vector2(292.063, 459.188)
 
-[sub_resource type="GDScript" id="GDScript_m825h"]
-script/source = "extends Area2D
-
-#signal showQuestion
-
-func _on_body_entered(body):
-	if body.name == \"Player\":
-		#emit_signal(\"question\")
-		queue_free()
-		get_tree().call_group(\"Questions\", \"showing\")
-
-
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_toxqd"]
 radius = 61.131
 
@@ -2606,17 +2588,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hu50"]
 size = Vector2(361.25, 843.625)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5imew"]
-size = Vector2(249, 197)
-
 [node name="Node2D" type="Node2D"]
 position = Vector2(79, 12)
 script = ExtResource("1_ikid8")
 metadata/_edit_horizontal_guides_ = [270.0]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("30_iwy28")
-autoplay = true
 
 [node name="TreeCheckPoint" parent="." instance=ExtResource("1_mt6w1")]
 position = Vector2(1777, 95)
@@ -2665,6 +2640,11 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/DialogInteractionArea"]
 position = Vector2(-1.5, -1)
 shape = SubResource("RectangleShape2D_8vxjn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(87, -523)
+stream = ExtResource("30_iwy28")
+autoplay = true
 
 [node name="Sky" type="Sprite2D" parent="."]
 z_index = -2
@@ -2742,7 +2722,6 @@ position = Vector2(3176.59, -9.12499)
 scale = Vector2(3.58988, 3.54225)
 texture = ExtResource("24_qnkvc")
 
-
 [node name="QuestionShoes" parent="." instance=ExtResource("27_j76oe")]
 visible = false
 position = Vector2(295, 324)
@@ -2750,7 +2729,6 @@ scale = Vector2(0.464986, 0.473256)
 
 [node name="Collectable" type="Area2D" parent="."]
 script = ExtResource("27_r5a4s")
-
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable"]
 position = Vector2(187, 417)
@@ -2849,15 +2827,12 @@ position = Vector2(-7, 7)
 scale = Vector2(2.77333, 2.99442)
 texture = ExtResource("31_0mk3x")
 
-
 [connection signal="body_entered" from="Checkpoint1" to="Checkpoint1" method="_on_body_entered"]
 [connection signal="body_entered" from="Collectable" to="Collectable" method="_on_body_entered"]
 [connection signal="body_entered" from="TransitionToVillage" to="TransitionToVillage" method="_on_body_entered"]
 [connection signal="body_exited" from="TransitionToVillage" to="TransitionToVillage" method="_on_body_exited"]
-
 [connection signal="body_entered" from="Collectable3" to="Collectable3" method="_on_body_entered"]
 [connection signal="body_entered" from="Collectable2" to="Collectable2" method="_on_body_entered"]
-
 
 [editable path="DialogArea1"]
 [editable path="DialogArea2"]
