@@ -8,4 +8,5 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Player":
 		queue_free()
+		get_tree().call_group("question", "showingBrush")
 
