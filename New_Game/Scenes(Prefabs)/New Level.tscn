@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://mvaholtj43gl" path="res://Clothes_snacks Asset Pack/Shirt.png" id="25_u260g"]
 [ext_resource type="PackedScene" uid="uid://bur7dj3e711cs" path="res://Objects/Question_Shoes1.tscn" id="27_a7ly6"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/NewLevelBack2Village.gd" id="28_m6rmo"]
-[ext_resource type="AudioStream" uid="uid://7ltm4fqdsslq" path="res://Village/Music/tvari-tokyo-cafe-159065.mp3" id="30_so7x2"]
+[ext_resource type="AudioStream" uid="uid://4hnuy1g2htmw" path="res://Village/Music/good-night-160166.mp3" id="30_iwy28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e1ec"]
 size = Vector2(137, 209)
@@ -2592,6 +2592,10 @@ position = Vector2(79, 12)
 script = ExtResource("1_ikid8")
 metadata/_edit_horizontal_guides_ = [270.0]
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_iwy28")
+autoplay = true
+
 [node name="TreeCheckPoint" parent="." instance=ExtResource("1_mt6w1")]
 position = Vector2(414, 521)
 
@@ -2746,13 +2750,8 @@ visible = false
 script = ExtResource("28_m6rmo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionToVillage"]
-visible = false
-position = Vector2(3624.62, 253.812)
+position = Vector2(3615, 251)
 shape = SubResource("RectangleShape2D_5hu50")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("30_so7x2")
-autoplay = true
 
 [connection signal="body_entered" from="Checkpoint1" to="Checkpoint1" method="_on_body_entered"]
 [connection signal="body_entered" from="Collectable" to="Collectable" method="_on_body_entered"]

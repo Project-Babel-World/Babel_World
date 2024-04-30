@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bww6y4gu83xjk"]
+[gd_scene load_steps=18 format=3 uid="uid://bww6y4gu83xjk"]
 
 [ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Village/stringstar fields/background_0.png" id="1_7olao"]
+[ext_resource type="PackedScene" uid="uid://cexkco4k3o2ig" path="res://Scenes(Prefabs)/Player.tscn" id="1_ue4uj"]
 [ext_resource type="Texture2D" uid="uid://s120rmf040ac" path="res://FrogDudes/Terrain/Terrain (16x16).png" id="2_y46v6"]
 [ext_resource type="Texture2D" uid="uid://creis36611737" path="res://Village/opp4_village_tiles/opp4_village_tiles/environment/tiles/village/tile_village_house.png" id="3_f77c7"]
 [ext_resource type="Texture2D" uid="uid://dmytc8b8r8l7x" path="res://Village/opp4_village_tiles/opp4_village_tiles/environment/tiles/village/tile_village_fountain.png" id="4_0vo4g"]
@@ -2483,6 +2484,18 @@ sources/6 = SubResource("TileSetAtlasSource_gt8eu")
 size = Vector2(33, 63)
 
 [node name="RestScene" type="Node2D"]
+scale = Vector2(2.37607, 2.4151)
+
+[node name="Player_Rabbit" parent="." instance=ExtResource("1_ue4uj")]
+position = Vector2(4.20864, 266.656)
+scale = Vector2(1.13993, 1.30049)
+platform_floor_layers = 4294967293
+
+[node name="Camera2D" type="Camera2D" parent="Player_Rabbit"]
+zoom = Vector2(1.5, 1.5)
+limit_left = -10
+limit_top = -500
+limit_bottom = 700
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -2502,6 +2515,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Background0" type="Sprite2D" parent="Control"]
 position = Vector2(423.5, 127)

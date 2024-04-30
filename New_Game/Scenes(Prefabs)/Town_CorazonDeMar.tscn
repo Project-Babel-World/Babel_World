@@ -5128,7 +5128,7 @@ position = Vector2(21, 9)
 script = ExtResource("19_eweou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1486, 397)
+position = Vector2(1305, 406)
 scale = Vector2(1e-05, 1e-05)
 shape = SubResource("RectangleShape2D_galnq")
 
@@ -5210,12 +5210,22 @@ scale = Vector2(4, 4)
 position = Vector2(1214, 500)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(-405, -6)
+position = Vector2(-273, -24)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(4, 156)
 shape = SubResource("RectangleShape2D_qbqgg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -112.0
+offset_right = 201.0
+grow_vertical = 0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
