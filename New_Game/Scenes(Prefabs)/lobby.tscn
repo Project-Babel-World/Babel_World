@@ -4297,8 +4297,27 @@ size = Vector2(15, 48)
 
 [node name="Lobby" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(307, 144)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -574.0
+offset_top = -935.0
+offset_right = -534.0
+offset_bottom = -895.0
+grow_vertical = 0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3.3312, 4.21708)
+
+[node name="TileMap" type="TileMap" parent="Control"]
+position = Vector2(134.69, -68.2323)
 tile_set = SubResource("TileSet_qkb1w")
 format = 2
 layer_0/name = "backgrund"
@@ -4308,9 +4327,9 @@ layer_1/tile_data = PackedInt32Array(524313, 327682, 5, 589849, 327682, 6, 65538
 layer_2/name = "Furniture"
 layer_2/tile_data = PackedInt32Array(458764, 327683, 5, 524300, 327683, 6, 589836, 327683, 7, 655372, 327683, 8, 458765, 393219, 5, 524301, 393219, 6, 589837, 393219, 7, 655373, 393219, 8, 458766, 458755, 5, 524302, 458755, 6, 589838, 458755, 7, 655374, 458755, 8, 458767, 524291, 5, 524303, 524291, 6, 589839, 524291, 7, 655375, 524291, 8, 458768, 589827, 5, 524304, 589827, 6, 589840, 589827, 7, 655376, 589827, 8, 589831, 327683, 0, 655367, 327683, 0, 589832, 393219, 0, 655368, 393219, 0, 589833, 458755, 0, 655369, 458755, 0, 589834, 524291, 0, 655370, 524291, 0, 720906, 524291, 1, 655365, 196611, 0, 589829, 196611, 0, 655366, 262147, 0, 589830, 262147, 0, 720905, 458755, 1, 720904, 458755, 1, 720903, 262147, 1, 720902, 262147, 1, 720901, 196611, 1, 655363, 196611, 13, 655362, 131075, 13, 655361, 131075, 13, 655364, 589827, 2, 720900, 589827, 3, 655371, 589827, 2, 720907, 589827, 3)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Control"]
 script = ExtResource("8_kyg6n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(137.5, 296)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D"]
+position = Vector2(-34.8104, 83.7677)
 shape = SubResource("RectangleShape2D_fo660")

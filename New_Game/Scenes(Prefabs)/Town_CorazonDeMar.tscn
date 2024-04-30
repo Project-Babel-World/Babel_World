@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cx1dnv4vof47g"]
+[gd_scene load_steps=39 format=3 uid="uid://cx1dnv4vof47g"]
 
 [ext_resource type="Texture2D" uid="uid://y52ogejqrukj" path="res://Village/stringstar fields/background_0.png" id="1_k60k6"]
 [ext_resource type="Texture2D" uid="uid://bmw0gvxrawkt7" path="res://Village/Heros/2 Owlet_Monster/Owlet_Monster.png" id="2_0d1re"]
@@ -5038,12 +5038,15 @@ sources/6 = SubResource("TileSetAtlasSource_ido2s")
 size = Vector2(0.111449, 2.00629)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_galnq"]
-size = Vector2(142, 203)
+size = Vector2(1.23999e+07, 2.24e+07)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcydt"]
 size = Vector2(148, 544)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmrud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbqgg"]
+size = Vector2(170, 1060)
 
 [node name="Town" type="Node2D"]
 
@@ -5051,8 +5054,8 @@ size = Vector2(148, 544)
 z_index = -2
 offset_left = -414.0
 offset_top = -328.0
-offset_right = 1872.0
-offset_bottom = 680.0
+offset_right = 1958.0
+offset_bottom = 662.0
 texture = ExtResource("1_k60k6")
 
 [node name="Mr_Owl" type="RigidBody2D" parent="."]
@@ -5125,7 +5128,7 @@ position = Vector2(21, 9)
 script = ExtResource("19_eweou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1360, 423)
+position = Vector2(1305, 406)
 scale = Vector2(1e-05, 1e-05)
 shape = SubResource("RectangleShape2D_galnq")
 
@@ -5205,6 +5208,24 @@ scale = Vector2(4, 4)
 
 [node name="Villager_Walking" parent="Villager_Holder" instance=ExtResource("14_ue7au")]
 position = Vector2(1214, 500)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-273, -24)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(4, 156)
+shape = SubResource("RectangleShape2D_qbqgg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -112.0
+offset_right = 201.0
+grow_vertical = 0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
