@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://r2kn1yay1jmw"]
+
+[ext_resource type="Script" path="res://Scripts/question_hairbrush.gd" id="1_wnod4"]
+[ext_resource type="Texture2D" uid="uid://cx0glrtj1x44r" path="res://Scenes(Prefabs)/Untitled20.png" id="2_xwvxj"]
+
+[node name="QuestionHairbrush" type="Node2D" groups=["question"]]
+script = ExtResource("1_wnod4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xwvxj")
+
+[node name="Wrong1" type="Button" parent="."]
+offset_left = -488.0
+offset_top = 282.0
+offset_right = -59.0
+offset_bottom = 393.0
+theme_override_font_sizes/font_size = 68
+text = "Secadora"
+
+[node name="Correct" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 426.0
+offset_right = 477.0
+offset_bottom = 537.0
+theme_override_font_sizes/font_size = 68
+text = "Cepillo"
+
+[node name="Wrong2" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 283.0
+offset_right = 469.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 68
+text = "Ojo
+"
+
+[node name="Wrong3" type="Button" parent="."]
+offset_left = -495.0
+offset_top = 432.0
+offset_right = -66.0
+offset_bottom = 543.0
+theme_override_font_sizes/font_size = 68
+text = "Pelo"
+
+[connection signal="pressed" from="Wrong1" to="." method="_on_wrong_1_pressed"]
+[connection signal="pressed" from="Correct" to="." method="_on_correct_pressed"]
+[connection signal="pressed" from="Wrong2" to="." method="_on_wrong_2_pressed"]
+[connection signal="pressed" from="Wrong3" to="." method="_on_wrong_3_pressed"]
