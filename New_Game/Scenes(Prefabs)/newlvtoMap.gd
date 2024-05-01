@@ -1,16 +1,16 @@
 extends Area2D
 
-var  entered = false
 
-func _on_body_entered(body: PhysicsBody2D):
+var entered = false
+
+func _on_body_entered(body):
 	entered = true
-	# Replace with function body.
+	pass # Replace with function body.
 
 
-
-func _on_body_exited(body: PhysicsBody2D):
+func _on_body_exited(body):
 	entered = false
- # Replace with function body.
+	pass # Replace with function body.
 	
 func  _process(delta):
 	if entered == true:
