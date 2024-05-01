@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://3cp1xb7tytpk"]
+
+[ext_resource type="Script" path="res://Scripts/question_shoes.gd" id="1_ja37g"]
+[ext_resource type="Texture2D" uid="uid://6ouc2ho7k88a" path="res://Question1.png" id="1_pu108"]
+
+[node name="QuestionShoes" type="Node2D" groups=["question"]]
+script = ExtResource("1_ja37g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pu108")
+
+[node name="Wrong1" type="Button" parent="."]
+offset_left = -563.0
+offset_top = 262.0
+offset_right = -40.0
+offset_bottom = 411.0
+theme_override_font_sizes/font_size = 61
+text = "Zacatecas"
+
+[node name="Correct" type="Button" parent="."]
+offset_left = 62.0
+offset_top = 265.0
+offset_right = 585.0
+offset_bottom = 414.0
+theme_override_font_sizes/font_size = 68
+text = "Zapato"
+
+[node name="Wrong3" type="Button" parent="."]
+offset_left = 65.0
+offset_top = 428.0
+offset_right = 588.0
+offset_bottom = 577.0
+theme_override_font_sizes/font_size = 68
+text = "Tacón"
+
+[node name="Wrong4" type="Button" parent="." groups=["questions"]]
+offset_left = -568.0
+offset_top = 441.0
+offset_right = -45.0
+offset_bottom = 590.0
+theme_override_font_sizes/font_size = 68
+text = "Chancla"
+
+[connection signal="pressed" from="Wrong1" to="." method="_on_wrong_1_pressed"]
+[connection signal="pressed" from="Correct" to="." method="_on_correct_pressed"]
+[connection signal="pressed" from="Wrong3" to="." method="_on_wrong_3_pressed"]
+[connection signal="pressed" from="Wrong4" to="." method="_on_wrong_4_pressed"]

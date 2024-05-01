@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://bur7dj3e711cs"]
+
+[ext_resource type="Texture2D" uid="uid://bdtxndyocfg3n" path="res://Scenes(Prefabs)/Question1.png" id="1_1b38k"]
+[ext_resource type="Script" path="res://Objects/Question_Shoes1.gd" id="1_6xhhk"]
+
+[node name="Question_Shoes" type="Node2D" groups=["Questions"]]
+script = ExtResource("1_6xhhk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(968, 666)
+scale = Vector2(0.370312, 0.339063)
+texture = ExtResource("1_1b38k")
+
+[node name="Wrong1" type="Button" parent="Sprite2D"]
+offset_left = -555.0
+offset_top = 282.0
+offset_right = -228.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 50
+text = "Zacatecas"
+metadata/_edit_use_anchors_ = true
+
+[node name="Wrong2" type="Button" parent="Sprite2D"]
+offset_left = -148.0
+offset_top = 282.0
+offset_right = 179.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 50
+text = " Tacón"
+metadata/_edit_use_anchors_ = true
+
+[node name="Correct" type="Button" parent="Sprite2D"]
+offset_left = -148.0
+offset_top = 451.0
+offset_right = 179.0
+offset_bottom = 573.0
+theme_override_font_sizes/font_size = 50
+text = "Zapato
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Wrong4" type="Button" parent="Sprite2D"]
+offset_left = -555.0
+offset_top = 451.0
+offset_right = -228.0
+offset_bottom = 573.0
+theme_override_font_sizes/font_size = 50
+text = "Chancla
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Sprite2D/Wrong1" to="." method="_on_wrong_1_pressed"]
+[connection signal="pressed" from="Sprite2D/Wrong2" to="." method="_on_wrong_2_pressed"]
+[connection signal="pressed" from="Sprite2D/Correct" to="." method="_on_correct_pressed"]
+[connection signal="pressed" from="Sprite2D/Wrong4" to="." method="_on_wrong_4_pressed"]

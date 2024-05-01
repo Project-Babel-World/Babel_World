@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch3dn0ew1lqey"]
+
+[ext_resource type="Texture2D" uid="uid://cnw5v4ahircj0" path="res://Game Pack Run & jump/PNG/Plants/plant3.png" id="1_qcsnv"]
+[ext_resource type="Script" path="res://TreeCheckPoint.gd" id="1_t38g7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6kyd"]
+size = Vector2(126, 171)
+
+[node name="TreeCheckPoint" type="Area2D"]
+script = ExtResource("1_t38g7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 0
+position = Vector2(2, 2.5)
+shape = SubResource("RectangleShape2D_l6kyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qcsnv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

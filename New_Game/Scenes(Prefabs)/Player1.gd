@@ -43,6 +43,7 @@ func _physics_process(delta): # runs at 6fps ?
 		
 	# Handle fall
 	if (position.y > 3000):
-		respawn(0, 500)
+		respawn(Checkpoint.last_position[0], Checkpoint.last_position[1])
+		#respawn(0, 500)
 
 
