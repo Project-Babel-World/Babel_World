@@ -163,21 +163,36 @@ position = Vector2(-124, 38)
 
 [node name="LevelHolder" type="Node2D" parent="."]
 
-[node name="Town1" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("right")]
+[node name="Town_CorazonDeMar" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("right")]
 position = Vector2(-128, 39)
 script = ExtResource("3_7ru2o")
 right = NodePath("../Turn1")
+isLevel = true
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelHolder/Town1"]
+[node name="Sprite2D" type="Sprite2D" parent="LevelHolder/Town_CorazonDeMar"]
 position = Vector2(2.99999, 1.90735e-06)
 scale = Vector2(0.0450608, 0.0881506)
 texture = ExtResource("4_60ncl")
 
-[node name="Level1" type="Node2D" parent="LevelHolder"]
+[node name="New Level" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("up", "left")]
 position = Vector2(145, -39)
 script = ExtResource("3_7ru2o")
+up = NodePath("../Obsticals")
+left = NodePath("../Turn6")
+isLevel = true
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelHolder/Level1"]
+[node name="Sprite2D" type="Sprite2D" parent="LevelHolder/New Level"]
+position = Vector2(-3, 3.8147e-06)
+scale = Vector2(0.0450608, 0.0881506)
+texture = ExtResource("4_60ncl")
+
+[node name="Obsticals" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("down")]
+position = Vector2(133, -88)
+script = ExtResource("3_7ru2o")
+down = NodePath("../New Level")
+isLevel = true
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelHolder/Obsticals"]
 position = Vector2(-3, 3.8147e-06)
 scale = Vector2(0.0450608, 0.0881506)
 texture = ExtResource("4_60ncl")
@@ -186,7 +201,7 @@ texture = ExtResource("4_60ncl")
 position = Vector2(-105, 39)
 script = ExtResource("3_7ru2o")
 up = NodePath("../Turn2")
-left = NodePath("../Town1")
+left = NodePath("../Town_CorazonDeMar")
 
 [node name="Turn2" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("down", "right")]
 position = Vector2(-104, -41)
@@ -215,6 +230,6 @@ left = NodePath("../Turn4")
 [node name="Turn6" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("up", "down", "right")]
 position = Vector2(121, -40)
 script = ExtResource("3_7ru2o")
-up = NodePath("../Level1")
+up = NodePath("../Obsticals")
 down = NodePath("../Turn5")
-right = NodePath("../Level1")
+right = NodePath("../New Level")

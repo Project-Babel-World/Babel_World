@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=80 format=3 uid="uid://c7iurm3igkjhc"]
+
 
 [ext_resource type="PackedScene" uid="uid://ralfc3n02qag" path="res://world/dialog_area.tscn" id="1_6whwd"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/New Level.gd" id="1_ikid8"]
@@ -27,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bppmqkom47cv1" path="res://Clothes_snacks Asset Pack/bigTree.png" id="24_qnkvc"]
 [ext_resource type="PackedScene" uid="uid://bvhiqjwvucbfm" path="res://ui/dialog_player.tscn" id="25_3xdhh"]
 [ext_resource type="Texture2D" uid="uid://mvaholtj43gl" path="res://Clothes_snacks Asset Pack/Shirt.png" id="25_u260g"]
+
 [ext_resource type="PackedScene" uid="uid://3cp1xb7tytpk" path="res://Objects/question_shoes.tscn" id="27_j76oe"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/Collectable.gd" id="27_r5a4s"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/NewLevelBack2Village.gd" id="28_m6rmo"]
@@ -39,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://bxl6hy1h1yyov" path="res://Objects/questions_dress.tscn" id="34_0aha0"]
 [ext_resource type="PackedScene" uid="uid://r2kn1yay1jmw" path="res://Objects/question_hairbrush.tscn" id="36_mtocb"]
 [ext_resource type="Script" path="res://Scenes(Prefabs)/newlvtoMap.gd" id="39_y8cec"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e1ec"]
 size = Vector2(137, 209)
@@ -2586,6 +2590,7 @@ animations = [{
 "speed": 5.0
 }]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hu50"]
 size = Vector2(361.25, 843.625)
 
@@ -2606,10 +2611,11 @@ scene_text_file = "res://json/Story.json"
 
 [node name="DialogArea1" parent="." instance=ExtResource("1_6whwd")]
 position = Vector2(-8, 505)
+priority = 5
 dialog_key = "story1"
 
 [node name="CollisionShape2D" parent="DialogArea1" index="0"]
-position = Vector2(-15.5, -46.5)
+position = Vector2(-13, -46)
 shape = SubResource("RectangleShape2D_5e1ec")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogArea1"]
@@ -2746,11 +2752,14 @@ animation = &"shoe"
 
 [node name="DialogArea2" parent="." instance=ExtResource("1_6whwd")]
 position = Vector2(517, 455)
+
 dialog_key = "story2"
+
 
 [node name="CollisionShape2D" parent="DialogArea2" index="0"]
 position = Vector2(-1, 3)
 shape = SubResource("RectangleShape2D_5e1ec")
+
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogArea2"]
 position = Vector2(-7, 7)
