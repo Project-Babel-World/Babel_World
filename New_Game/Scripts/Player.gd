@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -850.0
 @onready var actionable_finder = $Direction/ActionableFinder
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var can_move = true
+var can_talk = true
 
 
 	
@@ -18,7 +18,8 @@ func _physics_process(delta): # runs at 6fps ?
 
 
 	#if not can_move:  return
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept")  and can_talk:
+		can_talk = false
 		sprite_2d.animation = 'default'
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() >0:
@@ -28,12 +29,6 @@ func _physics_process(delta): # runs at 6fps ?
 	
 	# Add the gravity.
 		
-	if Input.is_action_just_pressed("ui_accept"):
-		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() >0:
-			DialogueManager.show_dialogue_balloon(load("res://dialog/main.dialogue"), "start") 
-			return
-			
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		sprite_2d.animation = "jumping"

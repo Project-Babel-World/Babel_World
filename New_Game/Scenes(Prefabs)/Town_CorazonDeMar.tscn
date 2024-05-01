@@ -5106,7 +5106,7 @@ autoplay = true
 position = Vector2(927, 208)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -61.5)
+position = Vector2(0, -119)
 offset = Vector2(0, -2)
 zoom = Vector2(2, 2)
 
@@ -5122,12 +5122,14 @@ shape = SubResource("RectangleShape2D_g7h18")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(21, 9)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("19_eweou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1360, 423)
-scale = Vector2(1e-05, 1e-05)
+position = Vector2(1380, 424)
 shape = SubResource("RectangleShape2D_galnq")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(230, 524)
@@ -5157,7 +5159,7 @@ scale = Vector2(2, -2)
 dialogue_resource = ExtResource("18_x2b10")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectingPete/Actionable"]
-scale = Vector2(4, 4)
+scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_nmrud")
 debug_color = Color(0.996078, 0, 0.211765, 0.419608)
 
@@ -5187,17 +5189,17 @@ position = Vector2(556, 498)
 [node name="Villager_Walking_4" parent="Villager_Holder" instance=ExtResource("15_iooso")]
 position = Vector2(894, 500)
 
-[node name="villager_stand" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
-position = Vector2(1354, 494)
-
 [node name="villager_stand3" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
-position = Vector2(1354, 308)
+position = Vector2(195, 310)
 
 [node name="villager_stand4" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
-position = Vector2(1354, 433)
+position = Vector2(195, 435)
+
+[node name="villager_stand" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
+position = Vector2(195, 496)
 
 [node name="villager_stand2" parent="Villager_Holder" instance=ExtResource("16_8ocoe")]
-position = Vector2(1354, 370)
+position = Vector2(195, 372)
 
 [node name="villager_stand5" parent="Villager_Holder" instance=ExtResource("18_kpjs2")]
 position = Vector2(-198, 268)
